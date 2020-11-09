@@ -1,0 +1,381 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a37e76ce395ad4a9d0c4633bbe6e21, type: 3}
+  m_Name: SceneAssetLibrary
+  m_EditorClassIdentifier: 
+  m_offset: 0
+  m_ordinal: 0
+  m_assetLibrary:
+    m_ID: 0
+    m_Name: Root
+    m_Depth: -1
+    Identity: 62
+    FolderIdentity: 4
+    Folders:
+    - m_ID: 0
+      m_Name: Root
+      m_Depth: -1
+      Assets: []
+      IsEnabled: 0
+    - m_ID: 3
+      m_Name: Assets
+      m_Depth: 0
+      Assets:
+      - m_ID: 4
+        m_Name: drywall_panel
+        m_Depth: 0
+        Object: {fileID: 4300004, guid: 6a3a3adae1f3844bdbb03aff7a7893e2, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 5
+        m_Name: DryWallPainted_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 9b8eadc4de0544646b75ddcc43f8fd06, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 6
+        m_Name: DryWall_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: a68228c24abfa2f4b8954d7b0148f799, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 7
+        m_Name: ground
+        m_Depth: 0
+        Object: {fileID: 4300002, guid: 6a3a3adae1f3844bdbb03aff7a7893e2, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 8
+        m_Name: Ground_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: d92ef32394b5f474385d74b565a7bdd7, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 9
+        m_Name: Stud_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 027cb3d3d7dc79d41ad763e01759de07, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 10
+        m_Name: Metal_Simple_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: a0427cf339e5891468d5f2b433b2d44a, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 11
+        m_Name: OSB_Panel
+        m_Depth: 0
+        Object: {fileID: 4300006, guid: 6a3a3adae1f3844bdbb03aff7a7893e2, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 12
+        m_Name: OBS_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: c438e5c679f1be040a135443008e2fce, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 13
+        m_Name: stud_frame
+        m_Depth: 0
+        Object: {fileID: 4300008, guid: 6a3a3adae1f3844bdbb03aff7a7893e2, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 14
+        m_Name: stud_pile
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: 6a3a3adae1f3844bdbb03aff7a7893e2, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 15
+        m_Name: Legs
+        m_Depth: 0
+        Object: {fileID: 4300004, guid: ed389028d40603840b8d2a0a537b9da5, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 16
+        m_Name: ConstructionLight_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 49076442eeb7e054b8e8869f8b40656d, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 17
+        m_Name: Light_Bulbs
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: ed389028d40603840b8d2a0a537b9da5, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 18
+        m_Name: LightBulb_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: ec739259ec61f5d4ba3ed6d34fd802a6, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 19
+        m_Name: Light_Heads
+        m_Depth: 0
+        Object: {fileID: 4300002, guid: ed389028d40603840b8d2a0a537b9da5, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 20
+        m_Name: Legs_Low
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: e3ae06a3979f53046aa05330d69de1fa, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 21
+        m_Name: Light_Bulbs_low
+        m_Depth: 0
+        Object: {fileID: 4300004, guid: e3ae06a3979f53046aa05330d69de1fa, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 22
+        m_Name: Light_Heads_Low
+        m_Depth: 0
+        Object: {fileID: 4300002, guid: e3ae06a3979f53046aa05330d69de1fa, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 23
+        m_Name: Spotlight_Cookie
+        m_Depth: 0
+        Object: {fileID: 2800000, guid: 8e34454a458313a44b4ebf0f2daea16c, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 24
+        m_Name: bench_bottom
+        m_Depth: 0
+        Object: {fileID: 4300006, guid: 786dc3a14970613408f6ac80d35165b0, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 25
+        m_Name: Plastic_Rough_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: a5aaee4111611af43b5abbff184fe5fa, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 26
+        m_Name: bench_legs
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: 786dc3a14970613408f6ac80d35165b0, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 27
+        m_Name: Plastic_Black_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: e745492728544aa488aa0429b6068e71, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 28
+        m_Name: bench_top
+        m_Depth: 0
+        Object: {fileID: 4300008, guid: 786dc3a14970613408f6ac80d35165b0, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 29
+        m_Name: Plastic_Yellow_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 30
+        m_Name: Plastic_Ridges_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: c05de7c865075334786e6a47a543af72, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 31
+        m_Name: supports
+        m_Depth: 0
+        Object: {fileID: 4300002, guid: 786dc3a14970613408f6ac80d35165b0, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 32
+        m_Name: Plastic_Gray_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 4dad30bbe2213eb4d8312f7bb6190866, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 33
+        m_Name: upper_covers
+        m_Depth: 0
+        Object: {fileID: 4300004, guid: 786dc3a14970613408f6ac80d35165b0, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 34
+        m_Name: bench_bottom_low
+        m_Depth: 0
+        Object: {fileID: 4300006, guid: 46f48e5f14eff41f9add98c2a52817b5, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 35
+        m_Name: bench_legs_low
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: 46f48e5f14eff41f9add98c2a52817b5, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 36
+        m_Name: bench_top_low
+        m_Depth: 0
+        Object: {fileID: 4300008, guid: 46f48e5f14eff41f9add98c2a52817b5, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 37
+        m_Name: upper_covers_low
+        m_Depth: 0
+        Object: {fileID: 4300004, guid: 46f48e5f14eff41f9add98c2a52817b5, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 38
+        m_Name: stud
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: 34624edaccd9d704a95ed404d919b492, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 39
+        m_Name: stud_short
+        m_Depth: 0
+        Object: {fileID: 4300002, guid: 34624edaccd9d704a95ed404d919b492, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 40
+        m_Name: power_jigsaw
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: b2de02dc472471a40816cf840b819ac4, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 41
+        m_Name: Jigsaw_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 801db2d997a562b4ea333aa4593ce0f0, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 42
+        m_Name: hammer
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: 7c32e2dd2b407a945a0462352383ce32, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 43
+        m_Name: Hammer_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 4efcffd7ae23f1e41943fd914b18da10, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 44
+        m_Name: safety_hat
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: fad0fd73d59bbee4697a178efb773334, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 45
+        m_Name: HardHat_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: e93789f0a5d66df4a81613935579642b, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 46
+        m_Name: level
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: 691c8b080d8f55744a58f5e86b96915d, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 47
+        m_Name: Metal_Blue_Simple_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: cd71291c91c8cce499cb663b5db9970e, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 48
+        m_Name: Liquid_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: c532880e607f8c84d8b9bf0c46a522ad, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 49
+        m_Name: safety_goggles
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: 36ed72df9b6f5de45819a1f02a1f034b, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 50
+        m_Name: Plastic_Transparent
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 8a38b7350df9a9c438e568993a00e5c5, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 51
+        m_Name: Strap_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 81c1860e7800e5340bf8a54c565ba9ea, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 52
+        m_Name: paint_1G_bucket
+        m_Depth: 0
+        Object: {fileID: 4300002, guid: cd0713beb0b2adf44a000adc6215c9dd, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 53
+        m_Name: PaintCan_mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: c820ae8e865d1d542b5c256e4270f6d4, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 54
+        m_Name: paint_1G_lid
+        m_Depth: 0
+        Object: {fileID: 4300004, guid: cd0713beb0b2adf44a000adc6215c9dd, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 55
+        m_Name: paint_5G_bucket
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: cd0713beb0b2adf44a000adc6215c9dd, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 56
+        m_Name: Plastic_White_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 6cfe423139c361a459da7ed9831d4b1c, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 57
+        m_Name: PaintLabel_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 3da4aad06945bbf4baf801c2aacbc01e, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 58
+        m_Name: brush
+        m_Depth: 0
+        Object: {fileID: 4300000, guid: fa766811e30e19c40a7556c1fad9579c, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 59
+        m_Name: PaintBrush_Mat
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 539165557a9d3744680bb21164bea45e, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 60
+        m_Name: Sphere
+        m_Depth: 0
+        Object: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 61
+        m_Name: HDRP/Lit
+        m_Depth: 0
+        Object: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
+        IsEnabled: 0
+        PrefabParts: []
+      IsEnabled: 1
