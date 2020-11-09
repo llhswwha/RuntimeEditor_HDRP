@@ -23,8 +23,15 @@ namespace Battlehub.RTEditor
         private bool m_isOpened;
 
         private IRTE m_editor;
+
+        private void Awake()
+        {
+            Debug.LogError("AddComponentControl.Awake");
+        }
+
         private void Start()
         {
+            Debug.LogError("AddComponentControl.Start");
             m_editor = IOC.Resolve<IRTE>();
         }
 
