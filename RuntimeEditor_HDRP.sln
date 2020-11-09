@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTEditor", "Battlehub.RTEditor.csproj", "{618f72e5-ba63-66ce-fb6b-2158b72d54bb}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{e2f73b4e-8cb1-74af-f9ad-4040275b60eb}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTExtensions", "Battlehub.RTExtensions.csproj", "{0355a9a8-f734-180f-6265-bbdd95e593f2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTEditor.Demo", "Battlehub.RTEditor.Demo.csproj", "{56b09407-5d23-d754-4982-0a9d2390a227}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSVPicker", "HSVPicker.csproj", "{33fa8121-8ec2-9c50-c70d-0a31bd71461f}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponents", "NavMeshComponents.csproj", "{983cb582-152f-bc79-0045-3328565c62ba}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTEditor.HDRP", "Battlehub.RTEditor.HDRP.csproj", "{d1175caf-61c2-af70-9181-304d0414429f}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTEditor.Tests", "Battlehub.RTEditor.Tests.csproj", "{21b74b94-c749-6c64-dba2-7b49b09f88d9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTExtensions.HDRP", "Battlehub.RTExtensions.HDRP.csproj", "{f826fb34-9bba-633c-7e12-d7cc394a91ed}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTScripting", "Battlehub.RTScripting.csproj", "{623a8d13-9003-422d-4814-935345071f43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAnalysis", "CodeAnalysis.csproj", "{cffda8ac-3812-58cd-a2e8-1f1174b3305c}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTEditor.Editor", "Battlehub.RTEditor.Editor.csproj", "{e6416c2d-1e56-2b9b-20ad-e5e9cc3d0149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsEditor", "NavMeshComponentsEditor.csproj", "{33d6d1d8-097c-0c15-4c23-b04a76cdb50d}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTEditor.Editor.Tests", "Battlehub.RTEditor.Editor.Tests.csproj", "{787aa5ab-2853-6835-8597-b675c8c94f51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTExtensions.Editor", "Battlehub.RTExtensions.Editor.csproj", "{a50dce07-4c11-62c7-d086-25e9b5e6dcd3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTEditor.HDRP.Editor", "Battlehub.RTEditor.HDRP.Editor.csproj", "{adc047f0-4ffc-b412-f011-7cc9055a964d}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{a9eeed87-c4d3-3f4f-b800-e039895e1292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlehub.RTExtensions.HDRP.Editor", "Battlehub.RTExtensions.HDRP.Editor.csproj", "{1bf505fa-1f07-d9f1-844e-93101ffd4747}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{618f72e5-ba63-66ce-fb6b-2158b72d54bb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618f72e5-ba63-66ce-fb6b-2158b72d54bb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e2f73b4e-8cb1-74af-f9ad-4040275b60eb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e2f73b4e-8cb1-74af-f9ad-4040275b60eb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0355a9a8-f734-180f-6265-bbdd95e593f2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0355a9a8-f734-180f-6265-bbdd95e593f2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56b09407-5d23-d754-4982-0a9d2390a227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56b09407-5d23-d754-4982-0a9d2390a227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33fa8121-8ec2-9c50-c70d-0a31bd71461f}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33fa8121-8ec2-9c50-c70d-0a31bd71461f}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983cb582-152f-bc79-0045-3328565c62ba}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983cb582-152f-bc79-0045-3328565c62ba}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{d1175caf-61c2-af70-9181-304d0414429f}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{d1175caf-61c2-af70-9181-304d0414429f}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21b74b94-c749-6c64-dba2-7b49b09f88d9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21b74b94-c749-6c64-dba2-7b49b09f88d9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f826fb34-9bba-633c-7e12-d7cc394a91ed}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f826fb34-9bba-633c-7e12-d7cc394a91ed}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623a8d13-9003-422d-4814-935345071f43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623a8d13-9003-422d-4814-935345071f43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{cffda8ac-3812-58cd-a2e8-1f1174b3305c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{cffda8ac-3812-58cd-a2e8-1f1174b3305c}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e6416c2d-1e56-2b9b-20ad-e5e9cc3d0149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e6416c2d-1e56-2b9b-20ad-e5e9cc3d0149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33d6d1d8-097c-0c15-4c23-b04a76cdb50d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33d6d1d8-097c-0c15-4c23-b04a76cdb50d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{787aa5ab-2853-6835-8597-b675c8c94f51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{787aa5ab-2853-6835-8597-b675c8c94f51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a50dce07-4c11-62c7-d086-25e9b5e6dcd3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a50dce07-4c11-62c7-d086-25e9b5e6dcd3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{adc047f0-4ffc-b412-f011-7cc9055a964d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{adc047f0-4ffc-b412-f011-7cc9055a964d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a9eeed87-c4d3-3f4f-b800-e039895e1292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a9eeed87-c4d3-3f4f-b800-e039895e1292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1bf505fa-1f07-d9f1-844e-93101ffd4747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1bf505fa-1f07-d9f1-844e-93101ffd4747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
