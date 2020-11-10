@@ -338,6 +338,7 @@ namespace Battlehub.RTEditor
 
                 editor.Init(descriptor.Targets, descriptor.Accessors, propertyInfo, descriptor.EraseTargetCallback, descriptor.Label, null, descriptor.ValueChangedCallback, () =>
                 {
+                    Debug.LogError("EndEdit:"+ descriptor+"|"+ propertyInfo.Name+"|"+propertyInfo.PropertyType+"|"+ editor);
                     m_editor.IsDirty = true;
                     UpdatePreview();
                 });
