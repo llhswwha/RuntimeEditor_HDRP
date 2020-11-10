@@ -373,6 +373,13 @@ namespace Battlehub.RTEditor
                     m_previewTexture.LoadImage(assetItem.Preview.PreviewData);
                     m_previewSprite = Sprite.Create(m_previewTexture, new Rect(0, 0, m_previewTexture.width, m_previewTexture.height), new Vector2(0.5f, 0.5f));
                     m_image.sprite = m_previewSprite;
+                    Debug.LogError(string.Format("UpdatePreview texture:{0},sprite:{1}",m_previewTexture,m_previewSprite));
+                }
+                else{
+                    // m_previewTexture.LoadImage(assetItem.Preview.PreviewData);
+                    // m_previewSprite = Sprite.Create(m_previewTexture, new Rect(0, 0, m_previewTexture.width, m_previewTexture.height), new Vector2(0.5f, 0.5f));
+                    // m_image.sprite = m_previewSprite;
+                    m_image.color=Material.color;//cww
                 }
             });
 

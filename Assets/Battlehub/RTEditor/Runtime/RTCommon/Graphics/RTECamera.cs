@@ -318,6 +318,10 @@ namespace Battlehub.RTCommon
                 for (int i = 0; i < renderers.Count; ++i)
                 {
                     Renderer renderer = renderers[i];
+                    if(renderer==null){
+                        //Debug.LogWarning("renderer==null");
+                        continue;
+                    }
                     Material[] materials = renderer.sharedMaterials;
                     for (int j = 0; j < materials.Length; ++j)
                     {

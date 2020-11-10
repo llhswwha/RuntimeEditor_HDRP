@@ -20,6 +20,10 @@ namespace Battlehub.RTEditor
         public GameObject[] MaterialEditors;
         //[HideInInspector]
         public bool[] IsMaterialEditorEnabled;
+
+        private void Awake(){
+            Debug.LogError("EditorsMapStorage.Awake");
+        }
      
     }
 }

@@ -289,7 +289,7 @@ namespace Battlehub.RTHandles
 
         public override void Select(RuntimeHandleAxis axis)
         {
-            Debug.Log("Select:" + axis);
+            // Debug.Log("Select:" + axis);
             base.Select(axis);
             OnVertexSnappingModeChaged();
             SetColors();

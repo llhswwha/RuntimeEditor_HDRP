@@ -134,10 +134,10 @@ namespace Battlehub.RTEditor
                 for (int i = 0; i < shaderInfo.PropertyCount; ++i)
                 {
                     bool isHidden = shaderInfo.IsHidden[i];
-                    if (isHidden)
-                    {
-                        continue;
-                    }
+                    // if (isHidden)
+                    // {
+                    //     continue;
+                    // }
 
                     string propertyDescr = shaderInfo.PropertyDescriptions[i];
                     string propertyName = shaderInfo.PropertyNames[i];

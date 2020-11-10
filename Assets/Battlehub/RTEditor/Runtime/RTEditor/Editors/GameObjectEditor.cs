@@ -302,6 +302,8 @@ namespace Battlehub.RTEditor
 
             return ignoreComponents;
         }
+
+        public List<string> IgnoreComponentTypes=new List<string>();
         
         private bool CreateComponentEditor(List<Component> components)
         {
@@ -314,11 +316,18 @@ namespace Battlehub.RTEditor
             Component component = components[0];
             Type componentType = component.GetType();
 
-            // Debug.Log("CreateComponentEditor component:"+component+"|"+componentType);
+            if(IgnoreComponentTypes.Contains(componentType.Name))
+            {
+                return false;
+            }
+
+            // Debug.Log("CreateComponentEditor component:"+componentType.Name);
             if (m_editorsMap.IsObjectEditorEnabled(componentType))
             {
                 //  Debug.Log("CreateComponentEditor 1");
                 GameObject editorPrefab = m_editorsMap.GetObjectEditor(componentType);
+                // Debug.Log("editorPrefab :"+editorPrefab);
+                Debug.Log("CreateComponentEditor Component:"+componentType.Name+"|Prefab:"+editorPrefab);
                 if (editorPrefab != null)
                 {
                     // Debug.Log("CreateComponentEditor 2");

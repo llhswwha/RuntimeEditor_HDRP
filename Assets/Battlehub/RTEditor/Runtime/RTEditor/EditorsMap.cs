@@ -47,6 +47,11 @@ namespace Battlehub.RTEditor
         private Dictionary<Shader, MaterialEditorDescriptor> m_materialMap = new Dictionary<Shader, MaterialEditorDescriptor>();
         private Dictionary<Type, EditorDescriptor> m_map = new Dictionary<Type, EditorDescriptor>();
         private GameObject[] m_editors = new GameObject[0];
+
+        private void SetEditor(int id,GameObject edt){
+            m_editors[id]=edt;
+        }
+
         private bool m_isLoaded = false;
         private Dictionary<Type, IComponentDescriptor> m_componentDescriptors;
         private ComponentEditor m_emptyComponentEditor;
@@ -217,11 +222,13 @@ namespace Battlehub.RTEditor
                 map.AddMapping(typeof(HorizontalLayoutGroup), 21, true, false);
                 map.AddMapping(typeof(VerticalLayoutGroup), 21, true, false);
                 map.AddMapping(typeof(GridLayoutGroup), 21, true, false);
+                map.AddMapping(typeof(UnityEngine.Material), 28, true, true);
             }
         }
 
         public void LoadMap()
         {
+            Debug.LogError("EditorsMap.LoadMap");
             if (m_isLoaded)
             {
                 return;
@@ -236,9 +243,15 @@ namespace Battlehub.RTEditor
             editorsMapCreator.Create(this);
 
             EditorsMapStorage editorsMap = Resources.Load<EditorsMapStorage>(EditorsMapStorage.EditorsMapPrefabName);
+            if(editorsMap!=null){
+                Debug.LogError("editorsMap:"+EditorsMapStorage.EditorsMapPrefabName);
+            }
             if (editorsMap == null)
             {
                 editorsMap = Resources.Load<EditorsMapStorage>(EditorsMapStorage.EditorsMapTemplateName);
+                if(editorsMap!=null){
+                    Debug.LogError("editorsMap:"+EditorsMapStorage.EditorsMapTemplateName);
+                }
             }
             if (editorsMap != null)
             {
@@ -265,13 +278,15 @@ namespace Battlehub.RTEditor
         public void RegisterEditor(ComponentEditor editor)
         {
             Array.Resize(ref m_editors, m_editors.Length + 1);
-            m_editors[m_editors.Length - 1] = editor.gameObject;
+            // m_editors[m_editors.Length - 1] = editor.gameObject;
+            SetEditor(m_editors.Length - 1,editor.gameObject);
         }
 
         public void RegisterEditor(PropertyEditor editor)
         {
             Array.Resize(ref m_editors, m_editors.Length + 1);
-            m_editors[m_editors.Length - 1] = editor.gameObject;
+            // m_editors[m_editors.Length - 1] = editor.gameObject;
+            SetEditor(m_editors.Length - 1,editor.gameObject);
         }
 
         public bool HasMapping(Type type)
@@ -281,6 +296,7 @@ namespace Battlehub.RTEditor
 
         public void AddMapping(Type type, int editorIndex, bool enabled, bool isPropertyEditor)
         {
+            // Debug.LogWarning(string.Format("AddMapping 2 type:{0},editorIndex:{1},enabled:{2},isPropertyEditor:{3}",type,editorIndex,enabled,isPropertyEditor));
             m_map.Add(type, new EditorDescriptor(editorIndex, enabled, isPropertyEditor));
         }
 
@@ -302,12 +318,14 @@ namespace Battlehub.RTEditor
 
         public void AddMapping(Type type, GameObject editor, bool enabled, bool isPropertyEditor)
         {
+            // Debug.LogWarning(string.Format("AddMapping 1 type:{0},editor:{1},enabled:{2},isPropertyEditor:{3}",type,editor,enabled,isPropertyEditor));
             int index = Array.IndexOf(m_editors, editor);
             if (index < 0)
             {
                 Array.Resize(ref m_editors, m_editors.Length + 1);
                 index = m_editors.Length - 1;
-                m_editors[index] = editor;
+                // m_editors[index] = editor;
+                SetEditor(index,editor);
             }
             m_map.Add(type, new EditorDescriptor(index, enabled, isPropertyEditor));
         }
@@ -356,8 +374,10 @@ namespace Battlehub.RTEditor
         private GameObject GetEditor(Type type, bool isPropertyEditor, bool strict = false)
         {
             EditorDescriptor descriptor = GetEditorDescriptor(type, isPropertyEditor, strict);
+            
             if (descriptor != null && descriptor.Index < m_editors.Length)
             {
+                // Debug.Log(string.Format("GetEditor type:{0},Index:{1},Editor:{2}",type,descriptor.Index,m_editors[descriptor.Index]));
                 return m_editors[descriptor.Index];
             }
             return null;

@@ -596,6 +596,8 @@ namespace Battlehub.RTEditor
                 return null;
             }
 
+            
+
             GameObject editorGo = m_editorsMap.GetPropertyEditor(memberType);
             if (editorGo == null)
             {
@@ -606,6 +608,9 @@ namespace Battlehub.RTEditor
             {
                 return null;
             }
+
+
+            // Debug.Log("  -> InstantiatePropertyEditor memberType:"+memberType+"|editorGo:"+editorGo);
             PropertyEditor editor = editorGo.GetComponent<PropertyEditor>();
             if (editor == null)
             {

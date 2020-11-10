@@ -72,9 +72,9 @@ MonoBehaviour:
   - {fileID: 1000013331282784, guid: c73d1951017304f4484c8278f3962694, type: 3}
   - {fileID: 1000013331282784, guid: c09f2270bac915d48b41d8e7f1f0c255, type: 3}
   - {fileID: 9160121250666103547, guid: 5ad3979ce9f60954fbf8eb487ee8e338, type: 3}
+  - {fileID: 4098240211733194425, guid: 1eb71034cb069a54c8f8ea136bb31b10, type: 3}
   IsDefaultMaterialEditorEnabled: 1
-  DefaultMaterialEditor: {fileID: 1000013302785078, guid: e271b6853f0d680408d9527a996e88ce,
-    type: 3}
+  DefaultMaterialEditor: {fileID: 1000013302785078, guid: e271b6853f0d680408d9527a996e88ce, type: 3}
   Shaders:
   - {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   MaterialEditors:

@@ -159,7 +159,7 @@ namespace Battlehub.RTEditor
                     Debug.LogWarning("Editor for " + memberInfo.Name + " not found");
                     Destroy(gameObject);
                 }
-
+                // Debug.Log("  -->>IListEditor.InitOverride m_elementType:"+m_elementType+"|editor:"+editor);
                 base.InitOverride(targets, accessors, memberInfo, eraseTargetCallback, label);
             }
             else

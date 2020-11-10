@@ -25,8 +25,12 @@ namespace Battlehub.RTEditor
 
         private ISettingsComponent m_settingsComponent;
 
+        public static InspectorView Instance;
+
         protected override void AwakeOverride()
         {
+            Instance=this;
+
             WindowType = RuntimeWindowType.Inspector;
             base.AwakeOverride();
 
@@ -124,9 +128,78 @@ namespace Battlehub.RTEditor
             return true;
         }
 
+        public GameObject ShowMaterialInfo(Material mat){
+            
+            DestroyEditor();
+
+            if(mat==null){
+                Debug.LogError("ShowMaterialInfo mat==null");
+                return null;
+            }
+            GameObject editorPrefab = m_editorsMap.GetMaterialEditor(mat.shader);
+
+                    m_editor = Instantiate(editorPrefab);//GameObjectEditor.Awake
+                    m_editor.transform.SetParent(m_panel, false);
+                    m_editor.transform.SetAsFirstSibling();
+
+                    MaterialEditor materialEditor=m_editor.GetComponent<MaterialEditor>();
+                    materialEditor.Material=mat;
+
+                    Debug.Log("InspectorView.CreateEditor GetMaterialEditor2");
+            return editorPrefab;
+        }
+
+        public GameObject ShowMaterialInfo(GameObject go){
+            GameObject editorPrefab=null;
+
+            if(go==null){
+                Debug.LogError("ShowMaterialInfo go==null");
+                return editorPrefab;
+            }
+            
+            MeshRenderer renderer=go.GetComponent<MeshRenderer>();
+                if(renderer){
+                    Material mat=renderer.sharedMaterial;
+                    if (mat.shader == null)
+                    {
+                        return editorPrefab;
+                    }
+
+                    Shader shader = mat.shader;
+                    for(int i = 0; i < renderer.sharedMaterials.Length; ++i)
+                    {
+                        Material material = (Material)renderer.sharedMaterials[i];
+                        if(material.shader != shader)
+                        {
+                            return editorPrefab;
+                        }
+                    }
+                    editorPrefab = m_editorsMap.GetMaterialEditor(mat.shader);
+
+                    m_editor = Instantiate(editorPrefab);//GameObjectEditor.Awake
+                    m_editor.transform.SetParent(m_panel, false);
+                    m_editor.transform.SetAsFirstSibling();
+
+                    MaterialEditor materialEditor=m_editor.GetComponent<MaterialEditor>();
+                    materialEditor.Material=mat;
+
+                    Debug.Log("InspectorView.CreateEditor GetMaterialEditor2");
+                }
+                else{
+                    Type objType=typeof(GameObject);
+                    if (!m_editorsMap.IsObjectEditorEnabled(objType))
+                    {
+                        return editorPrefab;
+                    }
+                    editorPrefab = m_editorsMap.GetObjectEditor(objType);
+                    Debug.Log("InspectorView.CreateEditor GetObjectEditor2");
+                }
+            return editorPrefab;
+        }
+
         private void CreateEditor()
         {
-            // Debug.Log("InspectorView.CreateEditor 1");
+            Debug.Log("InspectorView.CreateEditor Start");
             DestroyEditor();
 
             if (Editor.Selection.activeObject == null)
@@ -158,8 +231,9 @@ namespace Battlehub.RTEditor
                 }
             }
                        
-            // Debug.Log("InspectorView.CreateEditor 4");
+            Debug.Log("InspectorView.CreateEditor objType:"+objType);
             GameObject editorPrefab;
+            m_editor=null;
             if (objType == typeof(Material))
             {
                 Material mat = selectedObjects[0] as Material;
@@ -179,7 +253,13 @@ namespace Battlehub.RTEditor
                 }
 
                 editorPrefab = m_editorsMap.GetMaterialEditor(mat.shader);
+                Debug.Log("InspectorView.CreateEditor GetMaterialEditor");
             }
+            // else if (objType == typeof(GameObject)) //cww
+            // {
+            //     GameObject go = selectedObjects[0] as GameObject;
+            //     editorPrefab=ShowMaterialInfo(go);
+            // }
             else
             {
                 if (!m_editorsMap.IsObjectEditorEnabled(objType))
@@ -187,10 +267,11 @@ namespace Battlehub.RTEditor
                     return;
                 }
                 editorPrefab = m_editorsMap.GetObjectEditor(objType);
+                Debug.Log("InspectorView.CreateEditor GetObjectEditor");
             }
 
-            // Debug.Log("InspectorView.CreateEditor 5");
-            if (editorPrefab != null)
+            Debug.Log("InspectorView.CreateEditor editorPrefab:"+editorPrefab);
+            if (editorPrefab != null && m_editor==null)
             {
                 m_editor = Instantiate(editorPrefab);//GameObjectEditor.Awake
                 m_editor.transform.SetParent(m_panel, false);
