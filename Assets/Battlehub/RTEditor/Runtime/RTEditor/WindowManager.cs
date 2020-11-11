@@ -170,9 +170,9 @@ namespace Battlehub.RTEditor
             bool isDialog;
             wm.CreateWindow(RuntimeWindowType.Scene.ToString(), out sceneWd, out sceneContent, out isDialog);
 
-            WindowDescriptor gameWd;
-            GameObject gameContent;
-            wm.CreateWindow(RuntimeWindowType.Game.ToString(), out gameWd, out gameContent, out isDialog);
+            // WindowDescriptor gameWd;
+            // GameObject gameContent;
+            // wm.CreateWindow(RuntimeWindowType.Game.ToString(), out gameWd, out gameContent, out isDialog);
 
             WindowDescriptor inspectorWd;
             GameObject inspectorContent;
@@ -194,9 +194,9 @@ namespace Battlehub.RTEditor
             // GameObject animationContent;
             // wm.CreateWindow(RuntimeWindowType.Animation.ToString(), out animationWd, out animationContent, out isDialog);
 
-            WindowDescriptor probuilderWd;
-            GameObject probuilderContent;
-            wm.CreateWindow("probuilder", out probuilderWd, out probuilderContent, out isDialog);
+            // WindowDescriptor probuilderWd;
+            // GameObject probuilderContent;
+            // wm.CreateWindow("probuilder", out probuilderWd, out probuilderContent, out isDialog);
 
             // LayoutInfo layout1=new LayoutInfo(true,
             //             wm.CreateLayoutInfo(sceneContent.transform, sceneWd.Header, sceneWd.Icon),

@@ -12,6 +12,8 @@ using System.Collections;
 using TMPro;
 using System.Globalization;
 
+using Battlehub.RTSL;
+
 namespace Battlehub.RTEditor
 {
     public class CustomTypeFieldAccessor
@@ -588,6 +590,110 @@ namespace Battlehub.RTEditor
         }
 
         #endregion
+
+        public virtual object GetCurrentValue(){ //cww
+            return null;
+        }
+
+        #region static
+
+        public static void SetMaterial(Renderer renderer,int matId,Material newMat){
+            var materials=renderer.materials;
+            materials[matId]=newMat;
+            renderer.materials=materials;//
+        }
+
+        public static Material InstantiateMaterial(Material material,GameObject go){
+
+                if(material==null){
+                    Debug.LogError("InstantiateMaterial material==null");
+                    return material;
+                }
+                if(go==null){
+                    Debug.LogError("InstantiateMaterial go==null");
+                    return material;
+                }
+                string matName=material.name;
+                Debug.Log("InstantiateMaterial:"+matName+"|"+go);
+
+                if(!matName.Contains("(Clone)") && !matName.Contains("(Instance)"))
+                {
+                    Renderer renderer=go.GetComponent<Renderer>();
+                    if(renderer!=null){
+                        // 
+                        bool isMaterialChanged=false;
+                        for(int i=0;i<renderer.sharedMaterials.Length;i++)
+                        {
+                            var isSameMat=renderer.sharedMaterials[i]==material;
+                            Debug.Log("mat:"+renderer.sharedMaterials[i]+"|"+isSameMat);
+                            if(isSameMat){
+                                material=GameObject.Instantiate(material) as Material;
+                                material.name=matName+"(Instance)";
+                                // var materials=renderer.materials;
+                                // materials[i]=material;
+                                // renderer.materials=materials;//
+                                SetMaterial(renderer,i,material);
+                                isMaterialChanged=true;
+                                Debug.LogError("newMaterial"+i);
+                                break;
+                            }
+                        }
+                        if(isMaterialChanged==false){
+                            Debug.LogError("isMaterialChanged==false");
+                        }
+                    }
+                }
+                return material;
+        }
+        private static Material transparent_mat;
+
+        public static void CopyPropertiesFromMaterial(Material mat_new,Material material,MaterialPropertyDescriptor[] descriptors){
+            for(int i=0;i<descriptors.Length;i++){
+                MaterialPropertyDescriptor descriptor = descriptors[i];
+                PropertyInfo propertyInfo = descriptor.PropertyInfo;
+                RTShaderPropertyType propertyType = descriptor.Type;
+                MaterialPropertyAccessor materialPropertyAccessor=descriptor.Accessor as MaterialPropertyAccessor;
+                // Debug.Log("PropertyInfo:"+materialPropertyAccessor);
+                int proId=materialPropertyAccessor.PropertyId;
+                switch (propertyType)
+                {
+                    case RTShaderPropertyType.Color:
+                        mat_new.SetColor(proId,material.GetColor(proId));
+                        break;
+                    case RTShaderPropertyType.Vector:
+                        mat_new.SetVector(proId,material.GetVector(proId));
+                        break;
+                    case RTShaderPropertyType.Float:
+                        mat_new.SetFloat(proId,material.GetFloat(proId));
+                        break;
+                    case RTShaderPropertyType.Range:
+                        mat_new.SetFloat(proId,material.GetFloat(proId));
+                        break;
+                    case RTShaderPropertyType.TexEnv:
+                        mat_new.SetTexture(proId,material.GetTexture(proId));
+                        break;
+                    default:
+                        Debug.LogError("CopyPropertiesFromMaterial PropertyInfo:"+materialPropertyAccessor);
+                        break;
+                }
+                //mat_new.SetColor("_BaseColor",material.GetColor("_BaseColor"));
+            }
+        }
+
+        public static void SetTranparent(GameObject go,Material material,MaterialPropertyDescriptor[] descriptors){
+            Debug.LogError("SetTransparent "+go);
+            if(transparent_mat==null){
+                transparent_mat=Resources.Load<Material>("HDRPLit_Transparent");//HDRPLit_Transparent_Double
+                //transparent_mat=Resources.Load<Material>("HDRPLit_Transparent_Double");
+            }
+            //1.创建一个新的透明材质
+            Material mat_new=GameObject.Instantiate<Material>(transparent_mat);
+            //2.设置原材质的属性
+            CopyPropertiesFromMaterial(mat_new,material,descriptors);
+            //3.将新材质的所有属性复制到要修改成透明的材质上
+            material.CopyPropertiesFromMaterial(mat_new);//能够将非透明材质复制成透明材质
+        }
+        #endregion
     }
     public abstract class ConvertablePropertyEditor<T> : PropertyEditor<T>
     {
@@ -624,6 +730,10 @@ namespace Battlehub.RTEditor
     public abstract class PropertyEditor<T> : PropertyEditor
     {
         protected T m_currentValue;
+
+        public override object GetCurrentValue(){
+            return m_currentValue;
+        }
    
         protected override void InitOverride(object[] target, object[] accessor, MemberInfo memberInfo, Action<object, object> eraseTargetCallback = null, string label = null)
         {
@@ -733,6 +843,8 @@ namespace Battlehub.RTEditor
 
             RaiseValueChanging();
             BeginEdit(); //where is EndEdit? is this mistake?
+            
+            Debug.Log("SetValue:"+value);
             if (MemberInfo is PropertyInfo)
             {
                 PropertyInfo prop = (PropertyInfo)MemberInfo;
@@ -741,11 +853,15 @@ namespace Battlehub.RTEditor
                 {
                     for (int i = 0; i < accessors.Length; ++i)
                     {
+                        object oldValue=prop.GetValue(accessors[i]);
                         prop.SetValue(accessors[i], value, null);
+                        Debug.LogError(string.Format("SetValue1 old:{0} new:{1}",oldValue,value));
                     }
                 }
                 else
                 {
+                    object oldValue=prop.GetValue(accessors[index]);
+                    Debug.LogError(string.Format("SetValue2 old:{0} new:{1}",oldValue,value));
                     prop.SetValue(accessors[index], value, null);
                 }  
             }
@@ -757,12 +873,16 @@ namespace Battlehub.RTEditor
                 {
                     for (int i = 0; i < accessors.Length; ++i)
                     {
+                        object oldValue=field.GetValue(accessors[i]);
                         field.SetValue(accessors[i], value);
+                        Debug.LogError(string.Format("SetValue3 old:{0} new:{1}",oldValue,value));
                     }
                 }
                 else
                 {
+                    object oldValue=field.GetValue(accessors[index]);
                     field.SetValue(accessors[index], value);
+                    Debug.LogError(string.Format("SetValue4 old:{0} new:{1}",oldValue,value));
                 }
             }
 

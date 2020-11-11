@@ -596,7 +596,7 @@ namespace Battlehub.RTCommon
 
         private static IRTE RegisterRTE()
         {
-            Debug.Log("RegisterRTE");
+            // Debug.Log("RegisterRTE");
             if (Instance == null)
             {
                 GameObject editor = new GameObject("RTE");
@@ -1197,7 +1197,8 @@ namespace Battlehub.RTCommon
         public void Close()
         {
             IsOpened = false;
-            Destroy(gameObject);
+            if(gameObject)
+                Destroy(gameObject);
         }
 
         public void AddGameObjectToHierarchy(GameObject go, bool scaleStays = true)

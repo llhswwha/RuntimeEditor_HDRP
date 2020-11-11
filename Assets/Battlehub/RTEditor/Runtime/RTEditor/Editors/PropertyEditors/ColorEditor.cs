@@ -57,7 +57,7 @@ namespace Battlehub.RTEditor
             Transform dialogTransform = IOC.Resolve<IWindowManager>().CreateDialogWindow(RuntimeWindowType.SelectColor.ToString(), select + memberInfoTypeName,
                 (sender, args) =>
                 {
-                    SetValue(colorSelector.SelectedColor);
+                    SetValue(colorSelector.SelectedColor);//这里实际修改了材质的颜色
                     EndEdit();
                     SetInputField(colorSelector.SelectedColor);
                 }, (sender, args) => { }, 200, 345, 200, 345, false);

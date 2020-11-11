@@ -115,36 +115,37 @@ namespace Battlehub.RTEditor
         private void OnEdit()
         {
             Material material=m_currentValue as Material;
-            if(material==null){
-                Debug.LogError("OnEdit material==null");
-                return;
-            }
-            string matName=material.name;
-            Debug.Log("OnEdit:"+m_currentValue+"|"+Editor.Selection.activeGameObject);
-            if(!matName.Contains("(Clone)") && !matName.Contains("(Instance)"))
-            {
-                if(Editor.Selection.activeGameObject!=null){
-                    Renderer renderer=Editor.Selection.activeGameObject.GetComponent<Renderer>();
-                    if(renderer!=null){
-                        // 
-                        // bool isMaterialChanged=false;
-                        for(int i=0;i<renderer.sharedMaterials.Length;i++)
-                        {
-                            Debug.Log("mat:"+renderer.sharedMaterials[i]);
-                            if(renderer.sharedMaterials[i]==material){
-                                var materials=renderer.materials;
-                                material=GameObject.Instantiate(m_currentValue) as Material;
-                                material.name=matName+"(Instance)";
-                                materials[i]=material;
-                                renderer.materials=materials;//
-                                // isMaterialChanged=true;
-                                // Debug.LogError("OnEdit newMaterial :"+renderer.materials[i]);
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
+            material = InstantiateMaterial(material,Editor.Selection.activeGameObject);//PropertyEditor.InstantiateMaterial static 
+            // if(material==null){
+            //     Debug.LogError("OnEdit material==null");
+            //     return;
+            // }
+            // string matName=material.name;
+            // Debug.Log("OnEdit:"+m_currentValue+"|"+Editor.Selection.activeGameObject);
+            // if(!matName.Contains("(Clone)") && !matName.Contains("(Instance)"))
+            // {
+            //     if(Editor.Selection.activeGameObject!=null){
+            //         Renderer renderer=Editor.Selection.activeGameObject.GetComponent<Renderer>();
+            //         if(renderer!=null){
+            //             // 
+            //             // bool isMaterialChanged=false;
+            //             for(int i=0;i<renderer.sharedMaterials.Length;i++)
+            //             {
+            //                 Debug.Log("mat:"+renderer.sharedMaterials[i]);
+            //                 if(renderer.sharedMaterials[i]==material){
+            //                     var materials=renderer.materials;
+            //                     material=GameObject.Instantiate(m_currentValue) as Material;
+            //                     material.name=matName+"(Instance)";
+            //                     materials[i]=material;
+            //                     renderer.materials=materials;//
+            //                     // isMaterialChanged=true;
+            //                     // Debug.LogError("OnEdit newMaterial :"+renderer.materials[i]);
+            //                     break;
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
             
             InspectorView.Instance.ShowMaterialInfo(material);
         }

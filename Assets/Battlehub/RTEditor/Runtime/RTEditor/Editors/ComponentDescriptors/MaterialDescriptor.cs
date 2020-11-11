@@ -13,7 +13,17 @@ namespace Battlehub.RTEditor
     public class MaterialPropertyAccessor
     {
         private int m_propertyId;
+        public int PropertyId
+        {
+            get { return m_propertyId; }
+            set { m_propertyId = value; }
+        }
         private string m_propertyName;
+        public string PropertyName
+        {
+            get { return m_propertyName; }
+            set { m_propertyName = value; }
+        }
         private Material m_material;
 
         public Material Material
@@ -88,6 +98,13 @@ namespace Battlehub.RTEditor
             m_propertyName = propertyName;
             m_propertyId = Shader.PropertyToID(m_propertyName);
         }
+
+        public override string ToString()
+        {
+            return string.Format("(MaterialPropertyAccessor Name:{0},Id:{1},Material:{2})",m_propertyName,m_propertyId,m_material);
+        }
+
+
     }
 
 

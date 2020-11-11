@@ -14,6 +14,7 @@ namespace Battlehub.RTCommon
 
         public void Show(Action action)
         {
+            Debug.Log("Splash.Show");
             if (m_progress != null)
             {
                 if (Run.Instance == null)

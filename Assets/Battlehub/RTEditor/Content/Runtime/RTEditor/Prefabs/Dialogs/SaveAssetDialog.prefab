@@ -261,9 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8df8c08cfef364ca5ae8aade7b80b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnableStyle: 1
   Name: SecondaryColor
-  ShowLog: 0
 --- !u!114 &5772836559844789881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,9 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8df8c08cfef364ca5ae8aade7b80b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnableStyle: 1
   Name: BorderColor
-  ShowLog: 0
 --- !u!1001 &4189259698229744493
 PrefabInstance:
   m_ObjectHideFlags: 0

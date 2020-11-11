@@ -57,6 +57,12 @@ namespace Battlehub.RTEditor
             ValueChangedCallback = callback;
             EraseTargetCallback = eraseTargetCallback;
         }
+
+        public override string ToString()
+        {
+            return string.Format("(Label:{0},Type:{1},PropertyInfo:{2},Target:{3},Accessor:{4})"
+                ,Label,Type,PropertyInfo,Target,Accessor);
+        }
     }
 
 
@@ -145,6 +151,7 @@ namespace Battlehub.RTEditor
                 {
                     Materials = null;
                 }
+                Debug.Log("SetMaterial:"+value.color);
             }
         }
 
@@ -338,8 +345,26 @@ namespace Battlehub.RTEditor
 
                 editor.Init(descriptor.Targets, descriptor.Accessors, propertyInfo, descriptor.EraseTargetCallback, descriptor.Label, null, descriptor.ValueChangedCallback, () =>
                 {
-                    Debug.LogError("EndEdit:"+ descriptor+"|"+ propertyInfo.Name+"|"+propertyInfo.PropertyType+"|"+ editor);
-                    m_editor.IsDirty = true;
+                    if(descriptor.Label=="BaseColor")
+                    {
+                        MaterialPropertyAccessor materialPropertyAccessor=descriptor.Accessor as MaterialPropertyAccessor;
+                        if(materialPropertyAccessor!=null){
+                            Debug.LogError("OnEndEdit:"+ descriptor+"|1:"+ editor.GetCurrentValue()+"|2:"+this.Material.color+"|3:"+(descriptor.Target as Material).color+"|4:"+materialPropertyAccessor.Color+"|5:"+materialPropertyAccessor.Material.color);
+                            var surfaceType=materialPropertyAccessor.Material.GetFloat("_SurfaceType");
+                            var color=materialPropertyAccessor.Color;
+                            if(surfaceType==0 && color.a<1){
+                                GameObject go=m_editor.Selection.activeGameObject;
+                                 PropertyEditor.SetTranparent(go,materialPropertyAccessor.Material,descriptors);
+                            }
+                        }
+                        else{
+                            Debug.LogError("OnEndEdit materialPropertyAccessor==null");
+                        }
+
+                        
+                    }
+                    
+                   m_editor.IsDirty = true;
                     UpdatePreview();
                 });
             }
@@ -374,13 +399,22 @@ namespace Battlehub.RTEditor
                     m_previewTexture.LoadImage(assetItem.Preview.PreviewData);
                     m_previewSprite = Sprite.Create(m_previewTexture, new Rect(0, 0, m_previewTexture.width, m_previewTexture.height), new Vector2(0.5f, 0.5f));
                     m_image.sprite = m_previewSprite;
-                    Debug.LogError(string.Format("UpdatePreview texture:{0},sprite:{1}",m_previewTexture,m_previewSprite));
+                    Debug.LogError(string.Format("UpdatePreview1 texture:{0},sprite:{1}",m_previewTexture,m_previewSprite));
                 }
                 else{
                     // m_previewTexture.LoadImage(assetItem.Preview.PreviewData);
                     // m_previewSprite = Sprite.Create(m_previewTexture, new Rect(0, 0, m_previewTexture.width, m_previewTexture.height), new Vector2(0.5f, 0.5f));
                     // m_image.sprite = m_previewSprite;
-                    m_image.color=Material.color;//cww
+                    Texture texture=Material.GetTexture("_BaseColorMap");
+                    m_previewTexture= texture as Texture2D;
+                    Debug.LogError(string.Format("UpdatePreview2 m_previewTexture:{0}",texture));
+                    if(m_previewTexture!=null)
+                    {
+                        m_previewSprite = Sprite.Create(m_previewTexture, new Rect(0, 0, m_previewTexture.width, m_previewTexture.height), new Vector2(0.5f, 0.5f));
+                        m_image.sprite = m_previewSprite;
+                    }
+                    m_image.color=Material.GetColor("_BaseColor");//Material.color不行，材质不修改的话可以用，修改了的话这个不变。
+                    Debug.LogError(string.Format("UpdatePreview2 color:{0}",m_image.color));
                 }
             });
 

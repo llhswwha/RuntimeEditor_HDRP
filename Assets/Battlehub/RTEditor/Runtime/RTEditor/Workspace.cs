@@ -573,6 +573,7 @@ namespace Battlehub.RTEditor
                 return null;
             }
             wd.Created++;
+            Debug.LogError("CreateWindow:"+windowTypeName+"|"+wd.ContentPrefab+"|"+wd.Created);
 
             if (wd.ContentPrefab != null)
             {
@@ -580,7 +581,7 @@ namespace Battlehub.RTEditor
                 content = Instantiate(wd.ContentPrefab);
                 content.name = windowTypeName;
 
-                Debug.LogError("CreateWindow:"+windowTypeName+"|"+wd.ContentPrefab);
+                
 
                 Transform[] children = content.transform.OfType<Transform>().ToArray();
                 for (int i = 0; i < children.Length; ++i)

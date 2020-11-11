@@ -715,7 +715,9 @@ namespace Battlehub.RTEditor
             for(int i = 0; i < assets.Length; ++i)
             {
                 UnityObject asset = assets[i];
+                
                 AssetItem assetItem = project.ToAssetItem(asset);
+                Debug.Log("SaveAssets:"+asset+"|"+assetItem);
                 if (assetItem == null)
                 {
                     continue;

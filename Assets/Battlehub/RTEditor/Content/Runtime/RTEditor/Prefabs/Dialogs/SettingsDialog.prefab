@@ -163,9 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8df8c08cfef364ca5ae8aade7b80b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnableStyle: 1
   Name: PrimaryColor
-  ShowLog: 0
 --- !u!114 &7145240769676355013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,9 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8df8c08cfef364ca5ae8aade7b80b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnableStyle: 1
   Name: TextColor
-  ShowLog: 0
 --- !u!1 &1509314340522992498
 GameObject:
   m_ObjectHideFlags: 0

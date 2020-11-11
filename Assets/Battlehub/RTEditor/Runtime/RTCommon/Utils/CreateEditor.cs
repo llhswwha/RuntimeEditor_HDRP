@@ -58,16 +58,21 @@ namespace Battlehub.RTCommon
             Debug.Log("OnOpen");
             if (m_splashPrefab != null)
             {
-                Instantiate(m_splashPrefab).Show(() => InstantiateRuntimeEditor());
+                Debug.Log("OnOpen 1:"+m_splashPrefab);
+                Splash splash=Instantiate(m_splashPrefab);
+                Debug.Log("splash :"+splash);
+                splash.Show(() => InstantiateRuntimeEditor());
             }
             else
             {
+                 Debug.Log("OnOpen 2");
                 InstantiateRuntimeEditor();
             }
         }
 
         private void InstantiateRuntimeEditor()
         {
+            Debug.Log("InstantiateRuntimeEditor:"+m_editorPrefab);
             m_editor = Instantiate(m_editorPrefab);
             m_editor.name = "RuntimeEditor";
             m_editor.IsOpenedChanged += OnIsOpenedChanged;
