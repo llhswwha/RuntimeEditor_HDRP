@@ -165,6 +165,11 @@ namespace Battlehub.RTHandles
                 return;
             }
 
+            if(m_component.Window==null){
+                Debug.LogError("RuntimeSceneInput.LateUpdate m_component.Window!!!");
+                return;
+            }
+
             bool isPointerOverAndSelected = m_component.Window.IsPointerOver;
 
             IInput input = m_component.Editor.Input;

@@ -54,6 +54,7 @@ namespace Battlehub.RTCommon
         private void Start()
         {
             m_graphics = IOC.Resolve<IRTEGraphics>();
+            m_graphics.SetCameraId("SpriteGizmo");
             m_meshesCache = m_graphics.CreateSharedMeshesCache(CameraEvent.BeforeImageEffects);
             m_meshesCache.RefreshMode = CacheRefreshMode.OnTransformChange;
 

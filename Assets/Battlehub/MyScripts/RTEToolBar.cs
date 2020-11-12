@@ -29,7 +29,7 @@ public class RTEToolBar : MonoBehaviour
     {
         Instance=this;
 
-        InitState();
+        //InitState();
     }
 
     void Start(){

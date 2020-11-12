@@ -18,6 +18,7 @@ namespace Battlehub.RTCommon
             get { return m_window; }
             set
             {
+                //Debug.LogWarning("SetWindow : "+m_window+" -> "+value);
                 if(m_window != value)
                 {
                     if (m_isStarted)
@@ -75,7 +76,10 @@ namespace Battlehub.RTCommon
 
         protected virtual RuntimeWindow GetDefaultWindow()
         {
-           return m_editor.GetWindow(RuntimeWindowType.Scene);
+            
+            var wnd=m_editor.GetWindow(RuntimeWindowType.Scene);
+            Debug.LogWarning("GetDefaultWindow:"+m_editor+"|"+wnd);
+           return wnd;
         }
 
         protected virtual void OnDestroy()

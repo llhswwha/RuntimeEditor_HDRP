@@ -7,7 +7,8 @@ namespace Battlehub.Cubeman
 	{
         // The target we are following
 
-        private Transform m_target;
+        public Transform m_target;
+        
 		[SerializeField]
 		public Transform target
         {

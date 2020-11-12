@@ -9,7 +9,10 @@ namespace Battlehub.RTCommon
     public class CreateEditor : MonoBehaviour, IRTEState
     {
         public event Action<object> Created;
+
         public event Action<object> Destroyed;
+
+        public event Action<object> Closed;
 
         public bool IsCreated
         {
@@ -102,10 +105,12 @@ namespace Battlehub.RTCommon
                     }
 
                     Destroy(m_editor);
-
-                    if (Destroyed != null)
-                    {
+                    if(Destroyed!=null){
                         Destroyed(m_editor);
+                    }
+                    if (Closed != null)
+                    {
+                        Closed(m_editor);
                     }
                 }
             }

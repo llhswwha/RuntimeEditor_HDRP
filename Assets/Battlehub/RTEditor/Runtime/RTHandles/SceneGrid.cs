@@ -103,7 +103,8 @@ namespace Battlehub.RTHandles
             m_rteCamera = Window.Camera.gameObject.AddComponent<RTECamera>();
             m_rteCamera.Event = CameraEvent.AfterForwardAlpha;
             m_rteCamera.CommandBufferRefresh += OnCommandBufferRefresh;
-
+            m_rteCamera.Id="SceneGrid";
+            
             Rebuild();
             m_rteCamera.RefreshCommandBuffer();
         }

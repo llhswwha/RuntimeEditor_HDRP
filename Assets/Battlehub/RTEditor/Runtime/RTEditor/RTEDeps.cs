@@ -163,6 +163,8 @@ namespace Battlehub.RTEditor
             //m_editorsMap = EditorsMap;
         }
 
+        public event System.Action<object> Destroyed;
+
         private void OnDestroy()
         {
             if (m_instance == this)
@@ -184,6 +186,11 @@ namespace Battlehub.RTEditor
             m_contextMenu = null;
             m_runtimeHandlesComponent = null;
             //m_editorsMap = null;
+
+            Debug.Log("RTEDeps.OnDestroy");
+            if(Destroyed!=null){
+                Destroyed(m_rte);
+            }
         }
 
         protected virtual void OnDestroyOverride()
@@ -192,7 +199,7 @@ namespace Battlehub.RTEditor
         }
 
         private static RTEDeps m_instance;
-        private static RTEDeps Instance
+        public static RTEDeps Instance
         {
             get
             {

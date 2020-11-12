@@ -327,6 +327,7 @@ namespace Battlehub.RTHandles
             m_rteCamera = graphics.CreateCamera(camera, CameraEvent.AfterImageEffects, false, true);
             m_rteCamera.RenderersCache.Add(m_output.GetComponent<Renderer>());
             m_rteCamera.RefreshCommandBuffer();
+            m_rteCamera.SetId("SceneGizmo");
 
             DoSceneGizmo();
 
@@ -403,6 +404,9 @@ namespace Battlehub.RTHandles
                 }
             }
             
+            if(Editor==null){
+                return;
+            }
             if (Editor.Tools.IsViewing)
             {
                 m_selectedAxis = Vector3.zero;
@@ -786,7 +790,8 @@ namespace Battlehub.RTHandles
             m_material.SetFloat("_Width", size.x);
             m_material.SetFloat("_Height", size.y);
             Vector4 pivotAndAnchor=new Vector4(pivotPoint.x, pivotPoint.y, anchor.x, anchor.y);
-//            Debug.Log("UpdateLayout:"+pivotAndAnchor);
+            Debug.Log("SceneGizmo.UpdateLayout:"+pivotAndAnchor);
+            
             m_material.SetVector("_PivotAndAnchor", new Vector4(pivotPoint.x, pivotPoint.y, anchor.x, anchor.y));
 
             m_camera.targetTexture = m_renderTexture;

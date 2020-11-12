@@ -162,7 +162,8 @@ namespace Battlehub.RTCommon
             {
                 if(!m_editor.IsApplicationPaused)
                 {
-                    foreach (ExposeToEditor obj in m_editModeCache)
+                    var list=m_editModeCache.ToArray();
+                    foreach (ExposeToEditor obj in list)
                     {
                         TryToAddColliders(obj);
                         obj.SendMessage("OnRuntimeEditorOpened", SendMessageOptions.DontRequireReceiver);

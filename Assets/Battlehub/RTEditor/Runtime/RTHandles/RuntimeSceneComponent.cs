@@ -371,6 +371,7 @@ namespace Battlehub.RTHandles
 
         protected virtual void Update()
         {
+            if(Editor==null)return;
             if (Editor.Tools.AutoFocus)
             {
                 do

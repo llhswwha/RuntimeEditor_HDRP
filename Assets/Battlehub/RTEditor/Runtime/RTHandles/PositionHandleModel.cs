@@ -325,7 +325,8 @@ namespace Battlehub.RTHandles
 
             m_ssQuadRenderer.forceRenderingOff = !m_vertexSnappingModeArrows.activeSelf;
 
-            PushUpdatesToGraphicLayer();
+            var m_rteCamera =PushUpdatesToGraphicLayer();
+            m_rteCamera.SetId("PositionHandle");
         }
 
         private void SetDefaultColors()

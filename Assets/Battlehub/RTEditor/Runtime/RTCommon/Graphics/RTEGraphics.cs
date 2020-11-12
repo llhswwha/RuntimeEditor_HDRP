@@ -6,6 +6,7 @@ namespace Battlehub.RTCommon
 {
     public interface IRTEGraphics
     {
+ 
         void RegisterCamera(Camera camera);
         void UnregisterCamera(Camera camera);
         IRTECamera GetOrCreateCamera(Camera camera, CameraEvent cameraEvent);
@@ -16,6 +17,8 @@ namespace Battlehub.RTCommon
 
         void DestroySharedMeshesCache(IMeshesCache cache);
         void DestroySharedRenderersCache(IRenderersCache cache);
+
+        void SetCameraId(string id);
     }
 
     [DefaultExecutionOrder(-60)]
@@ -32,6 +35,16 @@ namespace Battlehub.RTCommon
         }
 
         private Dictionary<Camera, Dictionary<CameraEvent, RTECamera>> m_cameras = new Dictionary<Camera, Dictionary<CameraEvent, RTECamera>>();
+
+        private string camId="";
+
+        public void SetCameraId(string id)
+        {
+            camId=id;
+        }
+
+
+        private List<RTECamera> rteCameraList=new List<RTECamera>();
 
         private class Data
         {
@@ -55,14 +68,16 @@ namespace Battlehub.RTCommon
             {
                 IMeshesCache cache = kvp.Key;
                 Data data = kvp.Value;
-                CreateRTECamera(camera.gameObject, data.Event, cache, data.RTECameras);
+                var rteCamera=CreateRTECamera(camera.gameObject, data.Event, cache, data.RTECameras);
+                rteCamera.Id=camId;
             }
 
             foreach (KeyValuePair<IRenderersCache, Data> kvp in m_renderersCache)
             {
                 IRenderersCache cache = kvp.Key;
                 Data data = kvp.Value;
-                CreateRTECamera(camera.gameObject, data.Event, cache, data.RTECameras);
+                var rteCamera=CreateRTECamera(camera.gameObject, data.Event, cache, data.RTECameras);
+                rteCamera.Id=camId;
             }
 
             if (!m_cameras.ContainsKey(camera))
@@ -148,7 +163,8 @@ namespace Battlehub.RTCommon
             List<RTECamera> rteCameras = new List<RTECamera>();
             foreach (Camera camera in m_cameras.Keys)
             {
-                CreateRTECamera(camera.gameObject, cameraEvent, cache, rteCameras);
+                var rteCamera=CreateRTECamera(camera.gameObject, cameraEvent, cache, rteCameras);
+                rteCamera.Id=camId;
             }
 
             m_meshesCache.Add(cache, new Data(cache, cameraEvent, rteCameras));
@@ -161,7 +177,8 @@ namespace Battlehub.RTCommon
             List<RTECamera> rteCameras = new List<RTECamera>();
             foreach (Camera camera in m_cameras.Keys)
             {
-                CreateRTECamera(camera.gameObject, cameraEvent, cache, rteCameras);
+                var rteCamera=CreateRTECamera(camera.gameObject, cameraEvent, cache, rteCameras);
+                rteCamera.Id=camId;
             }
 
             m_renderersCache.Add(cache, new Data(cache, cameraEvent, rteCameras));
@@ -210,7 +227,7 @@ namespace Battlehub.RTCommon
             }
         }
 
-        private static void CreateRTECamera(GameObject camera, CameraEvent cameraEvent, IMeshesCache cache, List<RTECamera> rteCameras)
+        private static RTECamera CreateRTECamera(GameObject camera, CameraEvent cameraEvent, IMeshesCache cache, List<RTECamera> rteCameras)
         {
             bool wasActive = camera.gameObject.activeSelf;
             camera.SetActive(false);
@@ -221,9 +238,10 @@ namespace Battlehub.RTCommon
             rteCameras.Add(rteCamera);
 
             camera.SetActive(wasActive);
+            return rteCamera;
         }
 
-        private static void CreateRTECamera(GameObject camera, CameraEvent cameraEvent, IRenderersCache cache, List<RTECamera> rteCameras)
+        private static RTECamera CreateRTECamera(GameObject camera, CameraEvent cameraEvent, IRenderersCache cache, List<RTECamera> rteCameras)
         {
             bool wasActive = camera.gameObject.activeSelf;
             camera.SetActive(false);
@@ -234,6 +252,7 @@ namespace Battlehub.RTCommon
             rteCameras.Add(rteCamera);
 
             camera.SetActive(wasActive);
+            return rteCamera;
         }
 
 

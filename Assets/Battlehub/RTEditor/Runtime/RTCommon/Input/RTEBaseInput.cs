@@ -43,6 +43,7 @@ namespace Battlehub.RTCommon
 
         protected virtual void Update()
         {
+            if(m_editor==null)return;
             if(m_editor.IsInputFieldActive)
             {
                 return;

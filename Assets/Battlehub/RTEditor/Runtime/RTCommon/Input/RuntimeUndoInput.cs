@@ -48,6 +48,7 @@ namespace Battlehub.RTCommon
 
         private void Update()
         {
+            if(m_rte==null)return;
             if (UndoAction())
             {
                 m_rte.Undo.Undo();

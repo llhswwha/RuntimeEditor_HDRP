@@ -366,6 +366,7 @@ namespace Battlehub.RTHandles
 
         private void Update()
         {
+            if(Editor==null)return;
             if (!Editor.Selection.Enabled)
             {
                 return;

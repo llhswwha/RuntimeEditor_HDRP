@@ -111,7 +111,7 @@ namespace Battlehub.RTHandles
             return rteCamera;
         }
 
-        public void PushUpdatesToGraphicLayer()
+        public IRTECamera PushUpdatesToGraphicLayer()
         {
             IRTECamera rteCamera = GetRTECamera();
 
@@ -122,6 +122,7 @@ namespace Battlehub.RTHandles
                 rteCamera.RenderersCache.Add(renderers, false, true);
                 rteCamera.RenderersCache.Refresh();
             }
+            return rteCamera;
         }
 
         protected virtual Renderer[] GetRenderers()

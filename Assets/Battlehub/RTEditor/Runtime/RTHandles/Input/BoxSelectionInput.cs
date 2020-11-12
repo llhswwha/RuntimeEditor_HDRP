@@ -21,6 +21,7 @@ namespace Battlehub.RTHandles
         private bool m_pointerPressed = false;
         private void LateUpdate()
         {
+            if(m_editor==null)return;
             if (!m_editor.Input.GetPointer(MouseButton))
             {
                 if(m_pointerPressed)

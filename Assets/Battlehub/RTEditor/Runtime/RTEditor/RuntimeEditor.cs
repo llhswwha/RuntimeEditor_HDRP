@@ -14,7 +14,7 @@ using UnityObject = UnityEngine.Object;
 
 namespace Battlehub.RTEditor
 {
-    public interface IRuntimeEditor : IRTE
+    public interface IRuntimeEditor : IRTE//,IRTEState
     {
         event RTEEvent<CancelArgs> BeforeSceneSave;
         event RTEEvent SceneSaving;
@@ -99,6 +99,35 @@ namespace Battlehub.RTEditor
     [RequireComponent(typeof(RuntimeObjects))]
     public class RuntimeEditor : RTEBase, IRuntimeEditor
     {
+        public static int ID;
+        public int Id;
+
+        #region IRTEState implementation
+
+        
+        public bool IsCreated {get;set;}
+        public event System.Action<object> Created;
+        public event System.Action<object> Destroyed;
+
+        // public void TestDoDestroyed()
+        // {
+            
+        //     if(Destroyed!=null){
+        //         Debug.LogError("TestDoDestroyed Do Destroyed");
+        //         Destroyed(this);
+        //     }
+        //     else{
+        //         Debug.LogError("TestDoDestroyed Destroyed==null");
+        //     }
+        // }
+
+        private void Use()
+        {
+            Created(null);
+            Destroyed(null);
+        }
+        #endregion
+
         public event RTEEvent<CancelArgs> BeforeSceneSave;
         public event RTEEvent SceneSaving;
         public event RTEEvent SceneSaved;
@@ -178,6 +207,10 @@ namespace Battlehub.RTEditor
 
         protected override void Awake()
         {
+            Id=ID++;
+
+            Debug.Log("RuntimeEditor.Awake:"+Id);
+
             if (!RenderPipelineInfo.UseRenderTextures)
             {
                 CameraLayerSettings layerSettings = CameraLayerSettings;
@@ -288,6 +321,14 @@ namespace Battlehub.RTEditor
                 m_project.LoadCompleted -= OnLoadCompleted;
                 m_project.OpenProjectCompleted -= OnProjectOpened;
                 m_project.DeleteProjectCompleted -= OnProjectDeleted;
+            }
+            Debug.Log("RuntimeEditor.OnDestroy:"+Id);
+            if(Destroyed!=null){
+                Debug.Log("Destroyed:"+Destroyed);
+                Destroyed(this);
+            }
+            else{
+                Debug.Log("Destroyed==null");
             }
         }
 

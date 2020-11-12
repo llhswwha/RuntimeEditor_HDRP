@@ -78,6 +78,7 @@ namespace Battlehub.RTHandles.Demo
 
         protected virtual void Update()
         {
+            if(Editor==null)return;
             if(Editor.Input.GetKeyDown(KeyCode.Delete))
             {
                 DeleteSelected();

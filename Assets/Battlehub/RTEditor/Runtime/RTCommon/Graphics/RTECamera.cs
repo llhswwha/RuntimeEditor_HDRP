@@ -7,6 +7,7 @@ namespace Battlehub.RTCommon
 {
     public interface IRTECamera
     {
+        void SetId(string id);
         event Action<IRTECamera> CommandBufferRefresh;
 
         Camera Camera
@@ -47,6 +48,12 @@ namespace Battlehub.RTCommon
 
     public class RTECamera : MonoBehaviour, IRTECamera
     {
+        public string Id;
+
+        public void SetId(string id){
+            this.Id=id;
+        }
+
         public static event Action<IRTECamera> Created;
         public static event Action<IRTECamera> Destroyed;
 
@@ -129,6 +136,7 @@ namespace Battlehub.RTCommon
 
         private void Awake()
         {
+            Debug.LogError("RTECamera.Awake");
             m_camera = GetComponent<Camera>();
 
             if (m_commandBufferOverride == null)
@@ -221,6 +229,7 @@ namespace Battlehub.RTCommon
 
         private void OnRefresh()
         {
+            Debug.Log("RTECamera.OnRefresh:"+Id);
             RefreshCommandBuffer();
         }
 

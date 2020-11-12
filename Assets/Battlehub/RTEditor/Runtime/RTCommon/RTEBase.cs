@@ -596,9 +596,10 @@ namespace Battlehub.RTCommon
 
         private static IRTE RegisterRTE()
         {
-            // Debug.Log("RegisterRTE");
+            // 
             if (Instance == null)
             {
+                Debug.Log("RegisterRTE New RTE");
                 GameObject editor = new GameObject("RTE");
                 RTEBase instance = editor.AddComponent<RTEBase>();
                 instance.BuildUp(editor);
@@ -803,6 +804,8 @@ namespace Battlehub.RTCommon
             {
                 Instance = null;
             }
+
+            Debug.Log("RTEBase.OnDestroy");
         }
 
         private void SetInput()

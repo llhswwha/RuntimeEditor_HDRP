@@ -61,6 +61,7 @@ namespace Battlehub.RTHandles.HDRP
         private void Start()
         {
             m_graphics = IOC.Resolve<IRTEGraphics>();
+            m_graphics.SetCameraId("Outline");
             m_cache = m_graphics.CreateSharedRenderersCache(CameraEvent.AfterEverything);
             m_cache.MaterialOverride = m_selectionMaterial;
             m_editor = IOC.Resolve<IRTE>();
