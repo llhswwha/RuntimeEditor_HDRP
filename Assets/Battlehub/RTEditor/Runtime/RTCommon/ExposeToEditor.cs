@@ -248,6 +248,7 @@ namespace Battlehub.RTCommon
 
         private void Awake()
         {
+            // Debug.Log("ExposeToEditor.Awake");
             Init();
             IsAwaked = true;
 

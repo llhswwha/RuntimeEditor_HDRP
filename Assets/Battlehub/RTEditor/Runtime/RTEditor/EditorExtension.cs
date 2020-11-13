@@ -14,11 +14,12 @@ namespace Battlehub.RTEditor
 
     public class EditorExtension : MonoBehaviour
     {
-        private IRTEState m_rteState;
-        private IRTE m_editor;
+        protected IRTEState m_rteState;
+        protected IRTE m_editor;
 
         protected virtual void Awake()
         {
+            //Debug.LogError("EditorExtension.Awake:"+this);
             m_rteState = IOC.Resolve<IRTEState>();
             if (m_rteState != null)
             {

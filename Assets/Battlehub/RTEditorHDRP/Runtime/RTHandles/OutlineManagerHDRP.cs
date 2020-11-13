@@ -58,6 +58,10 @@ namespace Battlehub.RTHandles.HDRP
             }
         }
 
+        private void Awake(){
+            Debug.LogError("OutlineManagerHDRP.Awake");
+        }
+
         private void Start()
         {
             m_graphics = IOC.Resolve<IRTEGraphics>();
@@ -78,6 +82,7 @@ namespace Battlehub.RTHandles.HDRP
 
         private void OnDestroy()
         {
+            Debug.LogError("OutlineManagerHDRP.OnDestroy:"+this);
             if (m_editor != null)
             {
                 if(m_editor.Selection != null)

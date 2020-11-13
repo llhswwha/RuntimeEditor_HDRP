@@ -191,6 +191,9 @@ namespace Battlehub.RTHandles
                 m_cameraUtility.EnablePostProcessing(m_camera, false);
                 m_cameraUtility.PostProcessingEnabled += OnPostProcessingEnabled;
             }
+            else{
+                Debug.LogWarning("SceneGizmo.Awake m_cameraUtility==null");
+            }
 
             m_material = new Material(Shader.Find("Battlehub/RTHandles/RawImage"));
             
@@ -767,11 +770,26 @@ namespace Battlehub.RTHandles
 
             Vector2 pivotPoint = PivotPoint;
             Vector2 anchor = Anchor;
-            if (RenderPipelineInfo.Type == RPType.Standard || m_cameraUtility != null && m_cameraUtility.IsPostProcessingEnabled(Window.Camera))
+            // Debug.Log("PivotPoint:"+PivotPoint);
+            // Debug.Log("Anchor:"+Anchor);
+
+            // Debug.Log("1:"+(RenderPipelineInfo.Type == RPType.Standard));
+            // Debug.Log("2:"+(m_cameraUtility != null));
+            // if(m_cameraUtility!=null){
+            //     Debug.Log("3:"+(m_cameraUtility.IsPostProcessingEnabled(Window.Camera)));
+            // }
+
+            if (RenderPipelineInfo.Type == RPType.Standard 
+            || m_cameraUtility != null 
+            && m_cameraUtility.IsPostProcessingEnabled(Window.Camera))
             {
+                Debug.Log("change pivotPoint anchor");
                 pivotPoint.y = 1 - pivotPoint.y;
                 anchor.y = 1 - anchor.y;
             }
+
+            // Debug.Log("pivotPoint:"+pivotPoint);
+            // Debug.Log("anchor:"+anchor);
 
             if (m_renderTexture != null)
             {

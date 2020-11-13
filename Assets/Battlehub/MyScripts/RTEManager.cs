@@ -3,15 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using Battlehub.RTCommon;
 using Battlehub.RTEditor;
+using Battlehub.RTEditor.HDRP;
 public class RTEManager : MonoBehaviour
 {
+    public static RTEManager Instance;
+
+    public HDRPInit hdrpInit;
+
     public bool IsToolBarVisible=false;
 
+    void Awake(){
+        Instance=this;
+    }
+
+    public void HideHandles(){
+        Debug.LogError("RTEManager.HideHandles");
+        IsHandlesEnabled=true;
+        ToolBar.EnableHandles();
+        EditButton.SetActive(false);
+    }
+
+    public void ShowHandles(){
+        Debug.LogError("RTEManager.ShowHandles");
+        IsHandlesEnabled=true;
+        ToolBar.EnableHandles();
+        EditButton.SetActive(true);
+    }
+
     void Start(){
+        EditButton=RTEditor.EditButon.gameObject;
         RTEditor.Created+=OnEditorCreated;
         RTEditor.Closed+=OnEditorClosed; 
+        RTEditor.BeforeOpen+=OnEditorBeforeOpen;
 
         ToggleToolbar();
+        hdrpInit.EnableOutline();
+
+        // var volumns=GameObject.FindObjectsOfType<UnityEngine.Rendering.Volumn>();
+        // Debug.LogError("RTEManager.Start volumns:"+volumns.Length);
     }
 
     public bool IsEditorClosed=false;
@@ -20,6 +49,7 @@ public class RTEManager : MonoBehaviour
         if(IsEditorClosed){
             IsEditorClosed=false;
             ToggleToolbar();
+            hdrpInit.EnableOutline();
         }
     }
 
@@ -33,6 +63,7 @@ public class RTEManager : MonoBehaviour
             // Battlehub.RTCommon.IOC.ClearAll();
             // Battlehub.RTCommon.RTEBase.Init();
             GameObject instance=GameObject.Instantiate(ToolBarPrefab);
+            instance.SetActive(true);
             ToolBar=instance.GetComponent<RTEToolBar>();
             IsToolBarVisible=false;
         }
@@ -54,12 +85,10 @@ public class RTEManager : MonoBehaviour
     public void ToggleHandles()
     {
         if(IsHandlesEnabled){
-            IsHandlesEnabled=false;
-            ToolBar.DisableHandles();
+            HideHandles();
         }
         else{
-            IsHandlesEnabled=true;
-            ToolBar.EnableHandles();
+            ShowHandles();
         }
     }
 
@@ -68,12 +97,14 @@ public class RTEManager : MonoBehaviour
     public RTEToolBar ToolBar;
     public CreateEditor RTEditor;
 
+    public GameObject EditButton;
+
     public void OpenSceneEditor(){
-        IsToolBarVisible=false;
-        IsEditorOpen=true;
-        // HandleRootObj.SetActive(false);
-        ToolBar.Close();
-        ToolBar=null;
+        // IsToolBarVisible=false;
+        // IsEditorOpen=true;
+        // // HandleRootObj.SetActive(false);
+        // ToolBar.Close();
+        // ToolBar=null;
    
         RTEditor.OnOpen();
     }
@@ -81,7 +112,11 @@ public class RTEManager : MonoBehaviour
     private void OnDestroy()
     {
         if(RTEditor)
-            RTEditor.Closed-=OnEditorClosed;    
+        {
+            RTEditor.Created-=OnEditorCreated;
+            RTEditor.Closed-=OnEditorClosed;  
+            RTEditor.BeforeOpen-=OnEditorBeforeOpen;
+        }  
     }
 
     private void OnEditorDestroyed(object sender)
@@ -105,6 +140,15 @@ public class RTEManager : MonoBehaviour
         // editor.Destroyed+=OnEditorDestroyed;
         RTEDeps.Instance.Destroyed+=OnEditorDestroyed;
         // editor.TestDoDestroyed();
+    }
+
+    private void OnEditorBeforeOpen(object sender)
+    {
+        IsToolBarVisible=false;
+        IsEditorOpen=true;
+        // HandleRootObj.SetActive(false);
+        ToolBar.Close();
+        ToolBar=null;
     }
 
     private void OnEditorClosed(object sender)

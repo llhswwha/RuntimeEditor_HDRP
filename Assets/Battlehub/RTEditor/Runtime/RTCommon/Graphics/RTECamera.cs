@@ -220,6 +220,7 @@ namespace Battlehub.RTCommon
             }
         }
 
+        [ContextMenu("Destroy")]
         public void Destroy()
         {
             DestroyMeshesCache();
@@ -229,7 +230,7 @@ namespace Battlehub.RTCommon
 
         private void OnRefresh()
         {
-            Debug.Log("RTECamera.OnRefresh:"+Id);
+            // Debug.Log("RTECamera.OnRefresh:"+Id);
             RefreshCommandBuffer();
         }
 
@@ -254,8 +255,34 @@ namespace Battlehub.RTCommon
             m_commandBuffer = null;
         }
 
+        [ContextMenu("ClearCommandBuffer")]
+        public void ClearCommandBuffer(){ //cww
+            CommandBuffer commandBuffer;
+            if(m_commandBufferOverride == null)
+            {
+                if (m_commandBuffer == null)
+                {
+                    return;
+                }
+
+                m_commandBuffer.Clear();
+                if (m_cameraEvent == CameraEvent.AfterImageEffects || m_cameraEvent == CameraEvent.AfterImageEffectsOpaque)
+                {
+                    m_commandBuffer.ClearRenderTarget(true, false, Color.black);
+                }
+
+                commandBuffer = m_commandBuffer;
+            }
+            else
+            {
+                commandBuffer = m_commandBufferOverride;
+            }
+        }
+
+        [ContextMenu("RefreshCommandBuffer")]
         public void RefreshCommandBuffer()
         {
+            // Debug.Log("RTECamera.RefreshCommandBuffer:"+Id);
             if(Camera == null)
             {
                 return;

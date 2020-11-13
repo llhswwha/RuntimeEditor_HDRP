@@ -15,6 +15,59 @@ namespace Battlehub.RTEditor.HDRP
         [SerializeField]
         private Material m_selectionMaterial = null;
 
+        //private void Awake(){
+        //     base.Awake();
+        //     if(m_outlineManager==null){
+        //         m_outlineManager= gameObject.AddComponent<OutlineManagerHDRP>();
+        //     }
+        // }
+
+        // private void Start(){
+        //     //base.Start();
+        //     if(m_outlineManager==null){
+        //         m_outlineManager= gameObject.AddComponent<OutlineManagerHDRP>();
+        //     }
+        // }
+
+        // protected override void Awake()
+        // {
+        //     Debug.LogError("HDRPInit.Awake:"+this);
+        //     m_rteState = IOC.Resolve<IRTEState>();
+        //     Debug.Log("m_rteState:"+m_rteState);
+        //     if (m_rteState != null)
+        //     {
+        //         Debug.Log("IsCreated:"+m_rteState.IsCreated);
+        //         if (m_rteState.IsCreated)
+        //         {
+        //             Debug.Log("OnEditorExist()");
+        //             OnEditorExist();
+        //         }
+        //         else
+        //         {
+        //              Debug.Log("m_rteState.Created += OnEditorCreated");
+                    
+        //             m_rteState.Created += OnEditorCreated;
+
+        //              OnEditorExist();
+        //         }
+        //     }
+        //     else
+        //     {
+        //          Debug.Log("OnEditorExist()2");
+        //         OnEditorExist();
+        //     }
+
+            
+        // }
+
+        public void FireEditExist(){
+            OnEditorExist();
+        }
+
+        public void EnableOutline(){
+            OnEditorExist();
+        }
+
         protected override void OnEditorExist()
         {
             base.OnEditorExist();
@@ -72,9 +125,9 @@ namespace Battlehub.RTEditor.HDRP
                 }
             } 
         }
-
         protected override void OnEditorClosed()
         {
+            Debug.LogError("HDRPInit.OnEditorClosed");
             base.OnEditorClosed();
             if(m_outlineManager != null)
             {

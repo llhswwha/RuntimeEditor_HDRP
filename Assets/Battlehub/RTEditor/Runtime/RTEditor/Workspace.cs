@@ -127,7 +127,7 @@ namespace Battlehub.RTEditor
 
         public void Init()
         {
-            Debug.Log("Workspace.Init Start");
+            // Debug.Log("Workspace.Init Start");
             Unsubscribe();
 
             if(m_dockPanel != null)
@@ -141,7 +141,7 @@ namespace Battlehub.RTEditor
             }
 
             Subscribe();
-            Debug.Log("Workspace.Init End");
+            // Debug.Log("Workspace.Init End");
         }
 
 

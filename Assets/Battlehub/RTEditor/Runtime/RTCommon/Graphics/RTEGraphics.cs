@@ -26,6 +26,7 @@ namespace Battlehub.RTCommon
     {
         private void Awake()
         {
+            Debug.LogError("RTEGraphics.Awake");
             IOC.RegisterFallback<IRTEGraphics>(this);
         }
 

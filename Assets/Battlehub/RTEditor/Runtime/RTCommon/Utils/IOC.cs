@@ -286,13 +286,13 @@ namespace Battlehub.RTCommon
 
         public static void Unregister<T>(string name, Func<T> func)
         {
-            Debug.LogError("Unregister1:"+name+"|"+typeof(T));
+            // Debug.LogError("Unregister1:"+name+"|"+typeof(T));
             m_container.Unregister(name, func);
         }
 
         public static void Unregister<T>(string name, T instance)
         {
-             Debug.LogError("Unregister2:"+name+"|"+typeof(T)+"|"+instance);
+            //  Debug.LogError("Unregister2:"+name+"|"+typeof(T)+"|"+instance);
             m_container.Unregister(name, instance);
         }
 

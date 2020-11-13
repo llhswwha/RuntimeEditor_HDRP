@@ -30,6 +30,8 @@ public class RTEToolBar : MonoBehaviour
         Instance=this;
 
         //InitState();
+
+        DisableHandles();//没有轴
     }
 
     void Start(){
@@ -53,7 +55,10 @@ public class RTEToolBar : MonoBehaviour
     public void ShowToolbar(){
         //HandlesUI.SetActive(true); 
         Gizmo.SetActive(true); 
-        HdrpObj.SetActive(true);
+        if(HdrpObj!=null){
+            HdrpObj.SetActive(true);
+        }
+        
         toolsInput.gameObject.SetActive(true);
         sceneInput.EnableSelection=true;
     }
@@ -62,7 +67,9 @@ public class RTEToolBar : MonoBehaviour
     public void HideToolbar(){
         HandlesUI.SetActive(false); 
         Gizmo.SetActive(false); 
-        HdrpObj.SetActive(false);
+        if(HdrpObj!=null){
+            HdrpObj.SetActive(false);
+        }
         toolsInput.gameObject.SetActive(false);
         sceneInput.EnableSelection=false;
     }

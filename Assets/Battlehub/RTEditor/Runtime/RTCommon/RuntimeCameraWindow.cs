@@ -250,8 +250,10 @@ namespace Battlehub.RTCommon
 
         protected virtual void ResetCullingMask(Camera camera)
         {
-            CameraLayerSettings settings = Editor.CameraLayerSettings;
-            camera.cullingMask |= ~(settings.RaycastMask | 1 << settings.AllScenesLayer);
+            if(Editor!=null){
+                CameraLayerSettings settings = Editor.CameraLayerSettings;
+                camera.cullingMask |= ~(settings.RaycastMask | 1 << settings.AllScenesLayer);
+            }
         }
     }
 }

@@ -1072,6 +1072,12 @@ namespace Battlehub.RTHandles
 
         private void SelectGO<T>(bool multiselect, bool allowUnselect, IList<T> hits, Func<T, GameObject> getGameObject)
         {
+            
+            string txt="";
+            foreach(T item in hits){
+                txt+=item+";";
+            }
+            Debug.Log("RuntimeSelectionComponent.SelectGO :"+hits.Count+"|"+txt);
             if (hits.Count > 0)
             {
                 int nextIndex = GetNextIndex(hits, getGameObject);
@@ -1238,6 +1244,7 @@ namespace Battlehub.RTHandles
             return index;
         }
 
+        [ContextMenu("TryToClearSelection")]
         public void TryToClearSelection()
         {
             UnityObject[] filteredSelection;
@@ -1549,7 +1556,11 @@ namespace Battlehub.RTHandles
             // return can;
             if(go.GetComponent<ExposeToEditor>()==null)
             {
-                go.AddComponent<ExposeToEditor>();//不加上的话属性信息没有
+                go.AddComponent<ExposeToEditor>();//cww 不加上的话属性信息没有
+            }
+            if(go.transform.parent!=null && go.transform.parent.GetComponent<ExposeToEditor>()==null)
+            {
+                go.transform.parent.gameObject.AddComponent<ExposeToEditor>();//cww 不加上的话属性信息没有
             }
             return true;
         }

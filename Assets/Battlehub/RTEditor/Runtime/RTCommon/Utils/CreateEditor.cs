@@ -21,6 +21,14 @@ namespace Battlehub.RTCommon
 
         [SerializeField]
         private Button m_createEditorButton = null;
+
+        public Button EditButon
+        {
+            get{
+                return m_createEditorButton;
+            }
+        }
+
         [SerializeField]
         private RTEBase m_editorPrefab = null;
         [SerializeField]
@@ -32,6 +40,8 @@ namespace Battlehub.RTCommon
         {
             IOC.RegisterFallback<IRTEState>(this);
             m_editor = (RTEBase)FindObjectOfType(m_editorPrefab.GetType());
+
+            Debug.LogError("CreateEditor.Awake m_editor:"+m_editor);
             if (m_editor != null)
             {
                 if (m_editor.IsOpened)
@@ -56,8 +66,13 @@ namespace Battlehub.RTCommon
             }
         }
 
+        public event Action<object> BeforeOpen;
+
         public void OnOpen()
         {
+            if(BeforeOpen!=null){
+                BeforeOpen(this);
+            }
             Debug.Log("OnOpen");
             if (m_splashPrefab != null)
             {

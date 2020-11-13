@@ -263,6 +263,7 @@ namespace Battlehub.RTHandles
 
         public void BeginSelect()
         {
+            Debug.Log("BoxSelection.BeginSelect");
             if(Editor.Tools.ActiveTool != null)
             {
                 return;
@@ -289,6 +290,7 @@ namespace Battlehub.RTHandles
 
         public void EndSelect()
         {
+            Debug.Log("BoxSelection.EndSelect");
             if (m_isDragging)
             {
                 m_isDragging = false;
@@ -304,11 +306,13 @@ namespace Battlehub.RTHandles
 
         public Renderer[] Pick(Renderer[] renderers = null, bool filterObjects = true)
         {
+
             return Pick(renderers, new Bounds(Window.Pointer.ScreenPoint, Vector2.zero), filterObjects);
         }
 
         private Renderer[] Pick(Renderer[] renderers, Bounds bounds, bool filterObjects = true)
         {
+            Debug.Log("BoxSelection.Pick");
             if (renderers == null)
             {
                 renderers = FindObjectsOfType<Renderer>();
@@ -331,6 +335,7 @@ namespace Battlehub.RTHandles
 
         public Color32[] BeginPick(out Vector2Int texSize, Renderer[] renderers = null)
         {
+            Debug.Log("BoxSelection.BeginPick");
             if (renderers == null)
             {
                 renderers = FindObjectsOfType<Renderer>();
@@ -342,6 +347,7 @@ namespace Battlehub.RTHandles
 
         public Renderer[] EndPick(Color32[] texPixels, Vector2Int texSize, Renderer[] renderers = null)
         {
+            
             if (renderers == null)
             {
                 renderers = FindObjectsOfType<Renderer>();
@@ -353,6 +359,7 @@ namespace Battlehub.RTHandles
 
         private Renderer[] EndPick(Color32[] texPixels, Vector2Int texSize, Renderer[] renderers, Bounds bounds)
         {
+            Debug.Log("BoxSelection.EndPick");
             Canvas canvas = Window.GetComponentInParent<Canvas>();
             RectTransform sceneOutput = Window.GetComponent<RectTransform>();
             if (sceneOutput.childCount > 0)
@@ -448,7 +455,7 @@ namespace Battlehub.RTHandles
                     Filter(selection, filteringArgs, spriteGizmo.gameObject);
                 }
             }
-
+            Debug.Log("BoxSelection.HitTest :"+selection.Count());
             if(Selection != null)
             {
                 Selection(this, new BoxSelectionArgs { GameObjects = selection.ToArray() });

@@ -231,7 +231,8 @@ namespace Battlehub.RTCommon
         protected EventSystem m_eventSystem;
 
         [SerializeField]
-        private CameraLayerSettings m_cameraLayerSettings = new CameraLayerSettings(20, 21, 4, 17, 18, 19, 16);
+        //private CameraLayerSettings m_cameraLayerSettings = new CameraLayerSettings(20, 21, 4, 17, 18, 19, 16);
+        private CameraLayerSettings m_cameraLayerSettings = new CameraLayerSettings(24, 25, 4, 21, 22, 23, 20);
         [SerializeField]
         private bool m_createHierarchyRoot = false;
 

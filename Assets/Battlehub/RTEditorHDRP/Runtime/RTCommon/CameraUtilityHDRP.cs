@@ -89,11 +89,14 @@ namespace Battlehub.RTCommon.HDRP
             HDAdditionalCameraData cameraData = camera.GetComponent<HDAdditionalCameraData>();
             if (cameraData == null)
             {
+                Debug.Log("IsPostProcessingEnabled 1:"+camera);
                 return false;
             }
 
             FrameSettings settings = cameraData.renderingPathCustomFrameSettings;
-            return settings.IsEnabled(FrameSettingsField.Postprocess);
+            bool isEnabled= settings.IsEnabled(FrameSettingsField.Postprocess);
+            Debug.Log("IsPostProcessingEnabled isEnabled:"+isEnabled);
+            return isEnabled;
         }
 
         public void RequiresDepthTexture(Camera camera, bool value)
