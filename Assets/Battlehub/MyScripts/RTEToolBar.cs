@@ -61,6 +61,8 @@ public class RTEToolBar : MonoBehaviour
         
         toolsInput.gameObject.SetActive(true);
         sceneInput.EnableSelection=true;
+
+ 
     }
 
     [ContextMenu("HideToolbar")]
@@ -81,6 +83,8 @@ public class RTEToolBar : MonoBehaviour
         selectionComponent.IsRotationHandleEnabled=false;
         selectionComponent.IsScaleHandleEnabled=false;
         selectionComponent.IsRectToolEnabled=false;
+
+        
     }
 
     [ContextMenu("EnableHandles")]

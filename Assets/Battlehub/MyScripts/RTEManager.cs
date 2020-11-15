@@ -4,6 +4,9 @@ using UnityEngine;
 using Battlehub.RTCommon;
 using Battlehub.RTEditor;
 using Battlehub.RTEditor.HDRP;
+using Mogoson.CameraExtension;
+using Battlehub.RTHandles;
+
 public class RTEManager : MonoBehaviour
 {
     public static RTEManager Instance;
@@ -186,5 +189,52 @@ public class RTEManager : MonoBehaviour
 
     public void ShowMaterialProperties(){
 
+    }
+
+    public AroundAlignCamera aroundAlignCamera;
+
+    public RuntimeSceneComponent sceneCompnent;
+
+    public void LookFreeToLookAround()
+    {
+        SetLookAroundEnable(true);
+        SetLookFreeEnable(false);
+    }
+
+    private void SetLookAroundEnable(bool enable)
+    {
+        if (aroundAlignCamera == null)
+        {
+            aroundAlignCamera = GameObject.FindObjectOfType<AroundAlignCamera>();
+        }
+
+        if (aroundAlignCamera != null)
+        {
+            aroundAlignCamera.enabled = enable;
+        }
+
+        if (enable)
+        {
+            if(aroundAlignCamera.GetTarget().position != sceneCompnent.Pivot)
+                aroundAlignCamera.GetTarget().position = sceneCompnent.Pivot;
+        }
+    }
+
+    private void SetLookFreeEnable(bool enable)
+    {
+        if (sceneCompnent == null)
+        {
+            sceneCompnent = GameObject.FindObjectOfType<RuntimeSceneComponent>();
+        }
+        sceneCompnent.CanZoom = enable;
+        sceneCompnent.CanRotate = enable;
+        //sceneCompnent.CanFreeMove = false;
+        //sceneCompnent.CanOrbit = false;
+    }
+
+    public void LookAroundToLookFree()
+    {
+        SetLookAroundEnable(false);
+        SetLookFreeEnable(true);
     }
 }

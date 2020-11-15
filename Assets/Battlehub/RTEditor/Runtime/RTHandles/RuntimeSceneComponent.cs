@@ -657,7 +657,7 @@ namespace Battlehub.RTHandles
 
             if (!MathHelper.Approximately(m_targetPosition, cameraTransform.position, epsilonSq))
             {
-                cameraTransform.position = m_targetPosition;
+                cameraTransform.position = m_targetPosition;//拉近拉远核心
             }
         }
 
