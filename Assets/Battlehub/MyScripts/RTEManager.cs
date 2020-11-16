@@ -184,8 +184,12 @@ public class RTEManager : MonoBehaviour
         IsToolBarVisible=false;
         IsEditorOpen=true;
         // HandleRootObj.SetActive(false);
-        ToolBar.Close();
-        ToolBar=null;
+        if (ToolBar != null)
+        {
+            ToolBar.Close();
+            ToolBar = null;
+        }
+        
     }
 
     private void OnEditorClosed(object sender)
@@ -269,9 +273,20 @@ public class RTEManager : MonoBehaviour
             sceneCompnent.CanFreeMove = enable;
             sceneCompnent.CanOrbit = enable;
         }
+
+        if (enable)
+        {
+            if (aroundAlignCamera != null && sceneCompnent != null)
+            {
+                Vector3 pos= aroundAlignCamera.GetTargetPosition();
+                sceneCompnent.Pivot = pos;
+                Debug.LogError("SetLookFreeEnable:" + pos+"|"+ sceneCompnent.Pivot);
+            }
+                
+        }
     }
 
-     [UnityEngine.ContextMenu("LookAroundToLookFree")]
+    [UnityEngine.ContextMenu("LookAroundToLookFree")]
     public void LookAroundToLookFree()
     {
         SetLookAroundEnable(false);
