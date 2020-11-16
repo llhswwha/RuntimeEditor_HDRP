@@ -44,6 +44,8 @@
      <Compile Include="Assets\MGS-Camera-master\MGS-Camera\Editor\MouseTranslateEditor.cs" />
      <Compile Include="Assets\Battlehub\RTEditorDemo\Editor\Utils\BHRoot.cs" />
      <Compile Include="Assets\MGS-Camera-master\MGS-CommonCode\Editor\GenericEditor.cs" />
+     <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
+     <Compile Include="Assets\Demigiant\Editor\WelcomeScreen.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.6f/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -240,25 +242,52 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.6f/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Assets/Battlehub/RTEditor/ThirdParty/ICSharpCode.SharpZipLib.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Battlehub/RTEditor/ThirdParty/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Assets/Battlehub/RTEditor/ThirdParty/protobuf-net/protobuf-net.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Battlehub/RTEditor/ThirdParty/protobuf-net/protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/PackageCache/com.unity.burst@1.3.7/Unity.Burst.Unsafe.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/PackageCache/com.unity.burst@1.3.7/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/PackageCache/com.unity.collections@0.14.0-preview.16/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/PackageCache/com.unity.collections@0.14.0-preview.16/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0-preview/Runtime/Newtonsoft.Json.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0-preview/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenEditor">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenProEditor">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DemiLib">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DemiLib/DemiLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="DemiEditor">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DemiLib/Editor/DemiEditor.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.6f/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -606,187 +635,187 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.6f/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.CacheServer">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Jobs">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Jobs.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Jobs.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Jobs.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Jobs.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Jobs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Properties.UI">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Properties.UI.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Properties.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Serialization.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Serialization.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Serialization.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Properties">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Properties.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Properties.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Build.SlimPlayerRuntime">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Build.SlimPlayerRuntime.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Build.SlimPlayerRuntime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Scenes">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Scenes.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Scenes.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualEffectGraph.Runtime">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Scenes.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Scenes.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Scenes.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Physics">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Physics.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Physics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Extensions">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Mathematics.Extensions.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Mathematics.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Extensions.Hybrid">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Mathematics.Extensions.Hybrid.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Mathematics.Extensions.Hybrid.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rendering.Hybrid">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Rendering.Hybrid.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Rendering.Hybrid.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Physics.Hybrid">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Physics.Hybrid.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Physics.Hybrid.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rendering.Hybrid.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Rendering.Hybrid.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Rendering.Hybrid.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.BuildUtils">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.BuildUtils.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.BuildUtils.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Serialization">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Serialization.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Hybrid.EndToEnd.Tests">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.Hybrid.EndToEnd.Tests.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.Hybrid.EndToEnd.Tests.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Hybrid">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.Hybrid.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.Hybrid.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Deformations">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Deformations.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Deformations.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Physics.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Physics.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Physics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Properties.UI.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Properties.UI.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Properties.UI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Entities.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Transforms">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Transforms.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Transforms.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Transforms.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Transforms.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Transforms.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualEffectGraph.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Transforms.Hybrid">
-        <HintPath>E:/UnityProjects/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Transforms.Hybrid.dll</HintPath>
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/ScriptAssemblies/Unity.Transforms.Hybrid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -165,6 +165,7 @@ namespace Battlehub.RTEditor
 
         public static LayoutInfo GetBuiltInDefaultLayout(this IWindowManager wm)
         {
+             Debug.LogError("WindowManager.GetBuiltInDefaultLayout");
             WindowDescriptor sceneWd;
             GameObject sceneContent;
             bool isDialog;

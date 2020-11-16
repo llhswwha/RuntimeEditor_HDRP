@@ -683,8 +683,8 @@ namespace Battlehub.RTEditor
         public static void SetTranparent(GameObject go,Material material,MaterialPropertyDescriptor[] descriptors){
             Debug.LogError("SetTransparent "+go);
             if(transparent_mat==null){
-                transparent_mat=Resources.Load<Material>("HDRPLit_Transparent");//HDRPLit_Transparent_Double
-                //transparent_mat=Resources.Load<Material>("HDRPLit_Transparent_Double");
+                //transparent_mat=Resources.Load<Material>("HDRPLit_Transparent");//HDRPLit_Transparent_Double
+                transparent_mat=Resources.Load<Material>("HDRPLit_Transparent_Double");
             }
             //1.创建一个新的透明材质
             Material mat_new=GameObject.Instantiate<Material>(transparent_mat);

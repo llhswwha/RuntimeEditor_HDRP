@@ -58,7 +58,7 @@ namespace Battlehub.RTEditor
 
         protected virtual LayoutInfo DefaultLayout(IWindowManager wm)
         {
-
+            Debug.LogError("AutoSaveLayout.DefaultLayout:"+m_savedLayoutName);
             if (wm.LayoutExist(m_savedLayoutName))
             {
                 LayoutInfo layout = wm.GetLayout(m_savedLayoutName);

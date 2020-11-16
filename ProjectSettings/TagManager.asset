@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LocationFloor
+  - Person
+  - _TagCanvas
+  - _TagUICamera
+  - NewCanvas
+  - Rounte
+  - Point
+  - RoomDecoration
+  - Drill
+  - LoadInBuildObj
+  - Piping
   layers:
   - Default
   - TransparentFX
@@ -13,19 +24,19 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Range
+  - build
+  - Floor
+  - DepDevice
+  - RoomDevice
+  - Person
+  - Railing
+  - Wall
+  - Opaque_M
+  - Transparent_M
+  - Piping
+  - ScanModel
+  - StaticModel
   - 
   - 
   - 

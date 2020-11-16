@@ -527,12 +527,14 @@ namespace Battlehub.RTEditor
             }
         }
 
+        [SerializeField]
         private Color m_lightColorDefault = Color.white;
         public Color LightColor
         {
             get { return GetColor("LightColor", m_lightColorDefault); }
             set
             {
+                Debug.LogError("SettingsComponent.Set LightColor:"+value);
                 SetColor("LightColor", value);
                 Light[] lights = FindObjectsOfType<Light>();
                 foreach (Light light in lights)
@@ -547,12 +549,14 @@ namespace Battlehub.RTEditor
             }
         }
 
+        [SerializeField]
         private float m_ligthIntensityDefault;
         public float LightIntensity
         {
             get { return GetFloat("LightIntensity", m_ligthIntensityDefault); }
             set
             {
+                Debug.LogError("SettingsComponent.Set LightIntensity:"+value);
                 SetFloat("LightIntensity", value >= 0 ? value : 0);
                 Light[] lights = FindObjectsOfType<Light>();
                 foreach (Light light in lights)
@@ -567,12 +571,14 @@ namespace Battlehub.RTEditor
             }
         }
 
+        [SerializeField]
         private LightShadows m_shadowTypeDefault = LightShadows.Soft;
         public LightShadows ShadowType
         {
             get { return (LightShadows)GetInt("ShadowType", (int)m_shadowTypeDefault); }
             set
             {
+                Debug.LogError("SettingsComponent.Set ShadowType:"+value);
                 SetInt("ShadowType", (int)value);
                 Light[] lights = FindObjectsOfType<Light>();
                 foreach (Light light in lights)
@@ -587,6 +593,7 @@ namespace Battlehub.RTEditor
             }
         }
 
+        [SerializeField]
         private float m_shadowStrengthDefault;
         public float ShadowStrength
         {
@@ -758,9 +765,11 @@ namespace Battlehub.RTEditor
             sceneComponent.RectTool.Metric = SystemOfMeasurement == SystemOfMeasurement.Metric;
         }
 
+        public bool EnableLightSetting=false;//cww
 
         private void ApplySettings()
         {
+            Debug.LogError("SettingsComponent.ApplySettings");
             ApplyGridOpacity(GridOpacity);
 
             foreach (IRuntimeSceneComponent sceneComponent in m_sceneComponents.Values)
@@ -770,19 +779,22 @@ namespace Battlehub.RTEditor
 
             GraphicsQuality = GraphicsQuality;
 
-            Light[] lights = FindObjectsOfType<Light>();
-            foreach(Light light in lights)
-            {
-                if(light.type != LightType.Directional)
+            if(EnableLightSetting){
+                Light[] lights = FindObjectsOfType<Light>();
+                foreach(Light light in lights)
                 {
-                    continue;
-                }
+                    if(light.type != LightType.Directional)
+                    {
+                        continue;
+                    }
 
-                light.color = LightColor;
-                light.intensity = LightIntensity;
-                light.shadows = ShadowType;
-                light.shadowStrength = ShadowStrength;
+                    light.color = LightColor;
+                    light.intensity = LightIntensity;
+                    light.shadows = ShadowType;
+                    light.shadowStrength = ShadowStrength;
+                }
             }
+            
 
             EndEditUIScale();
 

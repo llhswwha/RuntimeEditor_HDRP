@@ -15,17 +15,23 @@ public class RTEManager : MonoBehaviour
 
     public bool IsToolBarVisible=false;
 
+    public bool IsLockCamera=false;
+
+    public GameObject EditorExtensions;
+
     void Awake(){
         Instance=this;
     }
 
+    [UnityEngine.ContextMenu("HideHandles")]
     public void HideHandles(){
         Debug.LogError("RTEManager.HideHandles");
         IsHandlesEnabled=true;
-        ToolBar.EnableHandles();
+        ToolBar.DisableHandles();
         EditButton.SetActive(false);
     }
 
+    [UnityEngine.ContextMenu("ShowHandles")]
     public void ShowHandles(){
         Debug.LogError("RTEManager.ShowHandles");
         IsHandlesEnabled=true;
@@ -39,11 +45,15 @@ public class RTEManager : MonoBehaviour
         RTEditor.Closed+=OnEditorClosed; 
         RTEditor.BeforeOpen+=OnEditorBeforeOpen;
 
-        ToggleToolbar();
+        //ToggleToolbar();
         hdrpInit.EnableOutline();
 
         // var volumns=GameObject.FindObjectsOfType<UnityEngine.Rendering.Volumn>();
         // Debug.LogError("RTEManager.Start volumns:"+volumns.Length);
+
+        if(IsLockCamera){
+            SetLookFreeEnable(false);
+        }
     }
 
     public bool IsEditorClosed=false;
@@ -53,14 +63,13 @@ public class RTEManager : MonoBehaviour
             IsEditorClosed=false;
             ToggleToolbar();
             hdrpInit.EnableOutline();
+
+            Y_UIFramework.UIManager.GetInstance().ShowUIPanel("ModelSystemTreePanel");
+            Y_UIFramework.MessageCenter.SendMsg(MsgType.ModelSystemTreePanelMsg.TypeName, MsgType.ModelSystemTreePanelMsg.ShowModelTree, null);
         }
     }
 
-    public void ToggleToolbar()
-    {
-        Debug.Log("ToggleToolbar");
-        Debug.Log("ToolBar isnull:"+(ToolBar==null));
-
+    private void InstantiateToolBar(){
         if(ToolBar==null){
             Debug.Log("Instantiate ToolBar");
             // Battlehub.RTCommon.IOC.ClearAll();
@@ -70,16 +79,39 @@ public class RTEManager : MonoBehaviour
             ToolBar=instance.GetComponent<RTEToolBar>();
             IsToolBarVisible=false;
         }
+    }
+
+    private void HideToolbar(){
+        Debug.Log("HideToolbar");
+        IsToolBarVisible=false;
+        ToolBar.HideToolbar();
+        ToolBar.gameObject.SetActive(false);
+        EditorExtensions.SetActive(false);
+        LookFreeToLookAround();
+
+    }
+
+    private void ShowToolbar(){
+        Debug.Log("ShowToolbar");
+        IsToolBarVisible=true;
+        ToolBar.gameObject.SetActive(true);
+        ToolBar.ShowToolbar();
+        EditorExtensions.SetActive(true);
+        LookAroundToLookFree();
+    }
+
+    public void ToggleToolbar()
+    {
+        Debug.Log("ToggleToolbar");
+        Debug.Log("ToolBar isnull:"+(ToolBar==null));
+
+        InstantiateToolBar();
 
         if(IsToolBarVisible){
-            Debug.Log("HideToolbar");
-            IsToolBarVisible=false;
-            ToolBar.HideToolbar();
+            HideToolbar();
         }
         else{
-            Debug.Log("ShowToolbar");
-            IsToolBarVisible=true;
-            ToolBar.ShowToolbar();
+            ShowToolbar();
         }
     }
 
@@ -143,6 +175,8 @@ public class RTEManager : MonoBehaviour
         // editor.Destroyed+=OnEditorDestroyed;
         RTEDeps.Instance.Destroyed+=OnEditorDestroyed;
         // editor.TestDoDestroyed();
+
+        Y_UIFramework.MessageCenter.SendMsg(MsgType.ModelSystemTreePanelMsg.TypeName, MsgType.ModelSystemTreePanelMsg.CloseWindow, null);
     }
 
     private void OnEditorBeforeOpen(object sender)
@@ -195,6 +229,7 @@ public class RTEManager : MonoBehaviour
 
     public RuntimeSceneComponent sceneCompnent;
 
+    [UnityEngine.ContextMenu("LookFreeToLookAround")]
     public void LookFreeToLookAround()
     {
         SetLookAroundEnable(true);
@@ -213,11 +248,12 @@ public class RTEManager : MonoBehaviour
             aroundAlignCamera.enabled = enable;
         }
 
-        if (enable)
-        {
-            if(aroundAlignCamera.GetTarget().position != sceneCompnent.Pivot)
-                aroundAlignCamera.GetTarget().position = sceneCompnent.Pivot;
-        }
+        // if (enable)
+        // {
+        //     if(aroundAlignCamera!=null && sceneCompnent!=null 
+        //         && aroundAlignCamera.GetTarget().position != sceneCompnent.Pivot)
+        //         aroundAlignCamera.GetTarget().position = sceneCompnent.Pivot;
+        // }
     }
 
     private void SetLookFreeEnable(bool enable)
@@ -226,12 +262,16 @@ public class RTEManager : MonoBehaviour
         {
             sceneCompnent = GameObject.FindObjectOfType<RuntimeSceneComponent>();
         }
-        sceneCompnent.CanZoom = enable;
-        sceneCompnent.CanRotate = enable;
-        //sceneCompnent.CanFreeMove = false;
-        //sceneCompnent.CanOrbit = false;
+        if(sceneCompnent!=null)
+        {
+            sceneCompnent.CanZoom = enable;
+            sceneCompnent.CanRotate = enable;
+            sceneCompnent.CanFreeMove = enable;
+            sceneCompnent.CanOrbit = enable;
+        }
     }
 
+     [UnityEngine.ContextMenu("LookAroundToLookFree")]
     public void LookAroundToLookFree()
     {
         SetLookAroundEnable(false);

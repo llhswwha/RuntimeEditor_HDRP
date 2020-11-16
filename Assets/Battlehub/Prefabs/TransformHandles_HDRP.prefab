@@ -873,6 +873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_window: {fileID: 0}
+  ComponentId: 0
   m_outlineManager: {fileID: 0}
   m_positionHandle: {fileID: 0}
   m_rotationHandle: {fileID: 0}
@@ -886,7 +887,8 @@ MonoBehaviour:
   m_canSelect: 1
   m_canSelectAll: 1
   m_canSelectExposedOnly: 0
-  InitPivotPos: {x: 0, y: 0, z: 0}
+  InitPivotPos: {x: 10, y: 10, z: 10}
+  SceneId: 0
   ViewTexture: {fileID: 0}
   MoveTexture: {fileID: 0}
   FreeMoveTexture: {fileID: 0}

@@ -5183,13 +5183,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_eventSystem: {fileID: 0}
   m_cameraLayerSettings:
-    ResourcePreviewLayer: 20
-    RuntimeGraphicsLayer: 21
+    ResourcePreviewLayer: 24
+    RuntimeGraphicsLayer: 25
     MaxGraphicsLayers: 4
-    AllScenesLayer: 17
-    ExtraLayer2: 19
-    ExtraLayer: 18
-    UIBackgroundLayer: 16
+    AllScenesLayer: 21
+    ExtraLayer2: 23
+    ExtraLayer: 22
+    UIBackgroundLayer: 20
   m_createHierarchyRoot: 0
   m_useBuiltinUndo: 1
   m_enableVRIfAvailable: 1
@@ -5200,6 +5200,7 @@ MonoBehaviour:
   IsClosedEvent:
     m_PersistentCalls:
       m_Calls: []
+  Id: 0
   m_progressIndicator: {fileID: 7924751973736737760}
   m_extraSettings:
     OpenDefaultProject: 1

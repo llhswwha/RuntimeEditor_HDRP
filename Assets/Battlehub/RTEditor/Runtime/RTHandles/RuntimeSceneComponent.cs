@@ -104,6 +104,9 @@ namespace Battlehub.RTHandles
 
     public class RuntimeSceneComponent : RuntimeSelectionComponent, IRuntimeSceneComponent
     {
+        public static RuntimeSceneComponent Instance;
+        public static int ID;
+        public int SceneId;
         public Texture2D ViewTexture;
         public Texture2D MoveTexture;
         public Texture2D FreeMoveTexture;
@@ -296,7 +299,10 @@ namespace Battlehub.RTHandles
 
         protected override void Awake()
         {
-            Debug.LogError("RuntimeSceneComponent.Awake ");
+            RuntimeSceneComponent lastComponent=RuntimeSceneComponent.Instance;
+
+            SceneId=ID++;
+            Debug.LogError("RuntimeSceneComponent.Awake SceneId:"+SceneId);
             base.Awake();
 
             Window.IOCContainer.RegisterFallback<IRuntimeSceneComponent>(this);
@@ -353,6 +359,9 @@ namespace Battlehub.RTHandles
             m_targetRotation = camTransform.rotation;
             m_targetPosition = camTransform.position;
             m_orbitDistance = (Pivot - m_targetPosition).magnitude;
+
+
+            Instance=this;
         }
 
         protected override void OnDestroy()
@@ -751,6 +760,7 @@ namespace Battlehub.RTHandles
 
         public void FreeMove(Vector2 rotate, Vector3 move, float forward)
         {
+            // return;
             if (m_lockInput || !CanFreeMove)
             {
                 return;

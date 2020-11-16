@@ -179,6 +179,9 @@ namespace Battlehub.RTHandles
             bool rotate = (RotateAction() || SwapLRMB && canRotate) && SceneComponent.CanRotate;
             bool pan = PanAction() && SceneComponent.CanPan;
             bool freeMove = FreeMoveAction() && SceneComponent.CanFreeMove;
+            // Debug.Log(string.Format("RuntimeSceneInput.LateUpdate1 canRotate:{0},rotate:{1},pan:{2},freeMove:{3}"
+            //     ,canRotate,rotate,pan,freeMove));
+ 
 
             if (pan && tools.Current != RuntimeTool.View)
             {
@@ -227,8 +230,11 @@ namespace Battlehub.RTHandles
                 SceneComponent.UpdateCursorState(true, m_pan, m_rotate && m_beginRotateImmediately, beginFreeMove && m_beginFreeMoveImmediately);
             }
 
+
+            // Debug.Log(string.Format("RuntimeSceneInput.LateUpdate2 m_freeMove:{0},m_rotate:{1},m_pan:{2}",m_freeMove,m_rotate,m_pan));
             if (m_freeMove)
             {
+                // Debug.Log("FreeMove");
                 Vector2 rotateAxes = RotateAxes() * FreeRotateSensitivity;
                 Vector3 moveAxes = MoveAxes() * FreeMoveSensitivity;
                 float zoomAxis = ZoomAxis();
@@ -241,6 +247,7 @@ namespace Battlehub.RTHandles
             }
             else if (m_rotate)
             {
+                // Debug.Log("Rotate");
                 if (canRotate)
                 {
                     Vector2 orbitAxes = RotateAxes();
@@ -262,6 +269,7 @@ namespace Battlehub.RTHandles
             }
             else if (m_pan)
             {
+                // Debug.Log("Pan");
                 if (beginPan)
                 {
                     SceneComponent.BeginPan(pointerPosition);
@@ -270,7 +278,7 @@ namespace Battlehub.RTHandles
             }
             else
             {
-                
+                // Debug.Log("else");
                 SceneComponent.FreeMove(Vector2.zero, Vector3.zero, 0);
 
                 if (isPointerOverAndSelected)

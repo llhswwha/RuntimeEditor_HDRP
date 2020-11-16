@@ -1,0 +1,373 @@
+﻿{
+  "ConfigInfo": [
+    { "Key": "本配置文件说明" },
+    {
+      "Key": "OperationPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\OperationPanel"
+    },
+    {
+      "Key": "OperationProcessPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\OperationProcessPanel"
+    },
+    {
+      "Key": "FirePathPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\FirePathPanel"
+    },
+    {
+      "Key": "TechnologyProPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\TechnologyProPanel"
+    },
+    {
+      "Key": "FireAreaPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\FireAreaPanel"
+    },
+    {
+      "Key": "TitlePanel",
+      "Value": "UI\\Prefabs\\Toolbar\\TitlePanel"
+    },
+    {
+      "Key": "DeleteTipPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\DeleteTipPanel"
+    },
+    {
+      "Key": "SaveTipPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\SaveTipPanel"
+    },
+    {
+      "Key": "RountePanel",
+      "Value": "UI\\Prefabs\\Toolbar\\RountePanel"
+    },
+    {
+      "Key": "DeleteAlarmPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\DeleteAlarmPanel"
+    },
+    {
+      "Key": "EditPathPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\EditPathPanel"
+    },
+    {
+      "Key": "AreaPathPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\AreaPathPanel"
+    },
+    {
+      "Key": "ModuleToolbar",
+      "Value": "UI\\Prefabs\\Toolbar\\ModuleToolbar"
+    },
+    {
+      "Key": "FunctionSwitchBar",
+      "Value": "UI\\Prefabs\\Toolbar\\FunctionSwitchBar"
+    },
+    {
+      "Key": "StartOutBar",
+      "Value": "UI\\Prefabs\\Toolbar\\StartOutBar"
+    },
+    {
+      "Key": "SettingPanel",
+      "Value": "UI\\Prefabs\\BasePanels\\SettingPanel"
+    },
+    {
+      "Key": "PersonnelTreePanel",
+      "Value": "UI\\Prefabs\\Toolbar\\PersonnelTreePanel"
+    },
+    {
+      "Key": "SmallMapPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\SmallMapPanel"
+    },
+    {
+      "Key": "ParkInfoPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\ParkInfoPanel"
+    },
+    {
+      "Key": "AlarmPushSimplifyPanel",
+      "Value": "UI\\Prefabs\\Toolbar\\AlarmPushSimplifyPanel"
+    },
+    {
+      "Key": "PersonnelManagePanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\PersonnelManagePanel"
+    },
+    {
+      "Key": "AddPersonnelPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\AddPersonnelPanel"
+    },
+    {
+      "Key": "EditPersonnelPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\EditPersonnelPanel"
+    },
+    {
+      "Key": "PersonnelSelectTagPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\PersonnelSelectTagPanel"
+    },
+    {
+      "Key": "PersonDepartSelectPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\PersonDepartSelectPanel"
+    },
+    {
+      "Key": "PersonDepAddPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\PersonDepAddPanel"
+    },
+    {
+      "Key": "PersonJobSelectPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\PersonJobSelectPanel"
+    },
+    {
+      "Key": "PersonJobAddPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\PersonJobAddPanel"
+    },
+    {
+      "Key": "PersonnelTagEditPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\PersonnelTagEditPanel"
+    },
+    {
+      "Key": "PersonDepartEidtSelectPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\PersonDepartEidtSelectPanel"
+    },
+    {
+      "Key": "PersonJobEditSelectPanel",
+      "Value": "UI\\Prefabs\\PersonnelManage\\PersonJobEditSelectPanel"
+    },
+    {
+      "Key": "PersonnelAlarmsPanel",
+      "Value": "UI\\Prefabs\\PersonnelAlarms\\PersonnelAlarmsPanel"
+    },
+    {
+      "Key": "MultHistoryPanel",
+      "Value": "UI\\Prefabs\\LocationUIPanel\\MultHistoryPanel"
+    },
+    {
+      "Key": "HistoryPersonsSearchPanel",
+      "Value": "UI\\Prefabs\\LocationUIPanel\\HistoryPersonsSearchPanel"
+    },
+    {
+      "Key": "HistoricalPathStatisticsPanel",
+      "Value": "UI\\Prefabs\\LocationUIPanel\\HistoricalPathStatisticsPanel"
+    },
+    {
+      "Key": "ModelAdjustLocationPanel",
+      "Value": "UI\\Prefabs\\LocationUIPanel\\ModelAdjustLocationPanel"
+    },
+    {
+      "Key": "RangeEditPanel",
+      "Value": "UI\\Prefabs\\MonitorRange\\RangeEditPanel"
+    },
+    {
+      "Key": "LocationCardManagePanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\LocationCardManagePanel"
+    },
+    {
+      "Key": "LocationCardAddPanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\LocationCardAddPanel"
+    },
+    {
+      "Key": "CardAddPermissionsEditPanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\CardAddPermissionsEditPanel"
+    },
+    {
+      "Key": "CardAddRoleEditPanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\CardAddRoleEditPanel"
+    },
+    {
+      "Key": "CardAddLocationPerEditPanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\CardAddLocationPerEditPanel"
+    },
+    {
+      "Key": "LocationCardEditPanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\LocationCardEditPanel"
+    },
+    {
+      "Key": "CardRolePermissionsEditPanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\CardRolePermissionsEditPanel"
+    },
+    {
+      "Key": "CardEidtLocationPerEditPanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\CardEidtLocationPerEditPanel"
+    },
+    {
+      "Key": "CardEditRoleEditPanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\CardEditRoleEditPanel"
+    },
+    {
+      "Key": "AreaDevTreePanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\AreaDevTreePanel"
+    },
+    {
+      "Key": "DeviceSearchPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\DeviceSearchPanel"
+    },
+    {
+      "Key": "DevAlarmListPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\DevAlarmListPanel"
+    },
+    {
+      "Key": "ObjectAddListPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\ObjectAddListPanel"
+    },
+    {
+      "Key": "DeviceEditUIPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\DeviceEditUIPanel"
+    },
+    {
+      "Key": "RoamManagePanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\RoamManagePanel"
+    },
+    {
+      "Key": "CameraVideoRtspPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\CameraVideoRtspPanel"
+    },
+    {
+      "Key": "MobileInspectionFollowUIPanel",
+      "Value": "UI\\Prefabs\\MobileInspection\\MobileInspectionFollowUIPanel"
+    },
+    {
+      "Key": "MobileInspectionUIPanel",
+      "Value": "UI\\Prefabs\\MobileInspection\\MobileInspectionUIPanel"
+    },
+    {
+      "Key": "MobileInspectionDetailsPanel",
+      "Value": "UI\\Prefabs\\MobileInspection\\MobileInspectionDetailsPanel"
+    },
+    {
+      "Key": "MobileInspectionDetailsInfoPanel",
+      "Value": "UI\\Prefabs\\MobileInspection\\MobileInspectionDetailsInfoPanel"
+    },
+    {
+      "Key": "MobileInspectionRouteDetailsPanel",
+      "Value": "UI\\Prefabs\\MobileInspection\\MobileInspectionRouteDetailsPanel"
+    },
+    {
+      "Key": "MobileInspectionHistoryPanel",
+      "Value": "UI\\Prefabs\\MobileInspection\\MobileInspectionHistoryPanel"
+    },
+    {
+      "Key": "MobileInspectionHistoryDetailPanel",
+      "Value": "UI\\Prefabs\\MobileInspection\\MobileInspectionHistoryDetailPanel"
+    },
+    {
+      "Key": "MobileInspectionHistoryRoutePanel",
+      "Value": "UI\\Prefabs\\MobileInspection\\MobileInspectionHistoryRoutePanel"
+    },
+    {
+      "Key": "TwoTicketHistoryPanel",
+      "Value": "UI\\Prefabs\\TwoTicketSystem\\TwoTicketHistoryPanel"
+    },
+    {
+      "Key": "WorkTicketHistoryDetailsPanel",
+      "Value": "UI\\Prefabs\\TwoTicketSystem\\WorkTicketHistoryDetailsPanel"
+    },
+    {
+      "Key": "OperationTicketHistoryDetailsPanel",
+      "Value": "UI\\Prefabs\\TwoTicketSystem\\OperationTicketHistoryDetailsPanel"
+    },
+    {
+      "Key": "TwoTicketSystemPanel",
+      "Value": "UI\\Prefabs\\TwoTicketSystem\\TwoTicketSystemPanel"
+    },
+    {
+      "Key": "WorkTicketDetailsPanel",
+      "Value": "UI\\Prefabs\\TwoTicketSystem\\WorkTicketDetailsPanel"
+    },
+    {
+      "Key": "OperationTicketDetailsPanel",
+      "Value": "UI\\Prefabs\\TwoTicketSystem\\OperationTicketDetailsPanel"
+    },
+    {
+      "Key": "TwoTicketSystemManagePanel",
+      "Value": "UI\\Prefabs\\TwoTicketSystem\\TwoTicketSystemManagePanel"
+    },
+    {
+      "Key": "AlarmPushDeleteManagePanel",
+      "Value": "UI\\Prefabs\\AlarmPushDeleteManage\\AlarmPushDeleteManagePanel"
+    },
+    {
+      "Key": "AfterEntranceGuardPanel",
+      "Value": "UI\\Prefabs\\Others\\AfterEntranceGuardPanel"
+    },
+    {
+      "Key": "NearPersonnelCameraPanel",
+      "Value": "UI\\Prefabs\\Others\\NearPersonnelCameraPanel"
+    },
+    {
+      "Key": "FacilityDevPanel",
+      "Value": "UI\\Prefabs\\Others\\FacilityDevPanel"
+    },
+    {
+      "Key": "BaoXinDeviceAlarmPanel",
+      "Value": "UI\\Prefabs\\Others\\BaoXinDeviceAlarmPanel"
+    },
+    {
+      "Key": "BigScreenPanel",
+      "Value": "UI\\Prefabs\\BigScreen\\BigScreenPanel"
+    },
+    {
+      "Key": "RoamDevInfoPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\RoamDevInfoPanel"
+    },
+    {
+      "Key": "AutoRoamPanel",
+      "Value": "UI\\Prefabs\\AutoRoam\\AutoRoamPanel"
+    },
+    {
+      "Key": "DoorAccessControlHistoryPanel",
+      "Value": "UI\\Prefabs\\DoorAccessControl\\DoorAccessControlHistoryPanel"
+    },
+    {
+      "Key": "FileTransferPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\FileTransferPanel"
+    },
+    {
+      "Key": "UploadFileChoosePanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\UploadFileChoosePanel"
+    },
+    {
+      "Key": "UploadFileModifyPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\UploadFileModifyPanel"
+    },
+    {
+      "Key": "DevEditGroupPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\DevEditGroupPanel"
+    },
+    {
+      "Key": "ModelGroupPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\ModelGroupPanel"
+    },
+    {
+      "Key": "ModeGroupNodeSelectPanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\ModeGroupNodeSelectPanel"
+    },
+    {
+      "Key": "DevGroupNamePanel",
+      "Value": "UI\\Prefabs\\DeviceManage\\DevGroupNamePanel"
+    },
+    {
+      "Key": "AuthorityTimeMangePanel",
+      "Value": "UI\\Prefabs\\LocationCardManage\\AuthorityTimeMangePanel"
+    },
+    {
+      "Key": "HistoryAlarmPushPanel",
+      "Value": "UI\\Prefabs\\LocationUIPanel\\HistoryAlarmPushPanel"
+    },
+    {
+      "Key": "HistoryAlarmDetailPanel",
+      "Value": "UI\\Prefabs\\LocationUIPanel\\HistoryAlarmDetailPanel"
+    },
+    {
+      "Key": "ModelSystemTreePanel",
+      "Value": "UI\\Prefabs\\ModelModify\\ModelSystemTreePanel"
+    },
+    {
+      "Key": "ModelGizmoEditPanel",
+      "Value": "UI\\Prefabs\\ModelModify\\ModelGizmoEditPanel"
+    },
+    {
+      "Key": "ModelMeasurePanel",
+      "Value": "UI\\Prefabs\\ModelModify\\ModelMeasurePanel"
+    },
+    {
+      "Key": "ModelModifyPanel",
+      "Value": "UI\\Prefabs\\ModelModify\\ModelModifyPanel"
+    },
+    {
+      "Key": "SmartModelInfoPanel",
+      "Value": "UI\\Prefabs\\ModelModify\\SmartModelInfoPanel"
+    }
+  ]
+}

@@ -213,9 +213,25 @@ namespace Battlehub.RTHandles
         Transform[] GetHandleTargets();
     }
 
+    public class RuntimeSelectionComponentInfo
+    {
+        public Vector3 InitPivotPos = Vector3.zero;
+        public RuntimeSelectionComponentInfo(RuntimeSelectionComponent component){
+            this.InitPivotPos=component.InitPivotPos;
+        }
+
+        public override string ToString(){
+            return string.Format("(Info InitPivotPos:{0})",InitPivotPos);
+        }
+    }
+
     [DefaultExecutionOrder(-55)]
     public class RuntimeSelectionComponent : RTEComponent, IRuntimeSelectionComponent
     {
+        public static RuntimeSelectionComponentInfo InstanceInfo;
+        public static int ID;
+        public int ComponentId;
+
         public event EventHandler<RuntimeSelectionFilteringArgs> Filtering;
         public event EventHandler<RuntimeSelectionChangingArgs> SelectionChanging;
         public event EventHandler SelectionChanged;
@@ -664,6 +680,12 @@ namespace Battlehub.RTHandles
 
         protected override void Awake()
         {
+            RuntimeSelectionComponentInfo lastComponent=InstanceInfo;
+            InstanceInfo=new RuntimeSelectionComponentInfo(this);
+
+            ComponentId=ID++;
+            Debug.LogError("RuntimeSelectionComponent.Awake SceneId:"+ComponentId+"|"+lastComponent);
+
             base.Awake();
         
             Window.IOCContainer.RegisterFallback<IScenePivot>(this);
@@ -779,6 +801,10 @@ namespace Battlehub.RTHandles
 
             Editor.Selection.SelectionChanged += OnRuntimeEditorSelectionChanged;
             Editor.Tools.ToolChanged += OnRuntimeToolChanged;
+            if(lastComponent!=null){
+                InitPivotPos=lastComponent.InitPivotPos;
+                Debug.LogError("InitPivotPos=lastComponent.InitPivotPos;");
+            }
 
             if (m_pivot == null)
             {

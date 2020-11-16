@@ -13,6 +13,8 @@ namespace Battlehub.RTCommon
 
     public class RuntimeCameraWindow : RuntimeWindow
     {
+        public static Camera LastCamera;
+
         public event Action CameraResized;
 
         [SerializeField]
@@ -55,6 +57,8 @@ namespace Battlehub.RTCommon
 
                     m_camera.depth = m_cameraDepth;
                 }
+
+                LastCamera=value;
             }
         }
 
@@ -84,9 +88,20 @@ namespace Battlehub.RTCommon
         private Rect m_rect;
         private RectTransform m_rectTransform;
 
+        public static int ID;
+
+        public int WndId;
+
         protected override void AwakeOverride()
         {
+            WndId=ID++;
+            Debug.LogError("RuntimeCameraWindow.AwakeOverride:"+WndId+"|"+Camera+"|"+LastCamera);
             base.AwakeOverride();
+
+            if(LastCamera!=null && Camera!=null){
+                Camera.enabled=false;
+                Camera=LastCamera;
+            }
 
             m_rectTransform = GetComponent<RectTransform>();
 
@@ -125,6 +140,8 @@ namespace Battlehub.RTCommon
                     RegisterGraphicsCamera();
                 }
             }
+            // if(LastCamera)
+            LastCamera=Camera;
         }
 
         protected override void OnDestroyOverride()
@@ -246,6 +263,9 @@ namespace Battlehub.RTCommon
         {
             CameraLayerSettings settings = Editor.CameraLayerSettings;
             camera.cullingMask &= (settings.RaycastMask | 1 << settings.AllScenesLayer);
+            Debug.LogError("RuntimeCameraWindow.SetCullingMask:"+camera+"|"+camera.cullingMask);
+            // Debug.Log("RuntimeCameraWindow.SetCullingMask RaycastMask:"+settings.RaycastMask);
+            // Debug.Log("RuntimeCameraWindow.SetCullingMask AllScenesLayer:"+settings.AllScenesLayer);
         }
 
         protected virtual void ResetCullingMask(Camera camera)
