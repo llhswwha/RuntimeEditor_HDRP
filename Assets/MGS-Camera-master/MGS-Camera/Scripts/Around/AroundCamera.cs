@@ -256,16 +256,7 @@ namespace Mogoson.CameraExtension
                 transform.rotation = Quaternion.Euler(CurrentAngles);
                 //transform.position = GetTargetPosition()- transform.forward * CurrentDistance;
 
-                if (isCameraCollider)
-                {
-                    Vector3 currentpos = GetTargetPosition() - transform.forward * CurrentDistance;
-                    SetPosition(currentpos);
-
-                }
-                else
-                {
-                    transform.position = GetTargetPosition() - transform.forward * CurrentDistance;
-                }
+                transform.position = GetTargetPosition() - transform.forward * CurrentDistance;
             }
         }
 
@@ -325,16 +316,7 @@ namespace Mogoson.CameraExtension
             transform.rotation = Quaternion.Euler(CurrentAngles);
             //transform.position = GetTargetPosition()- transform.forward * CurrentDistance;
 
-            if (isCameraCollider)
-            {
-                Vector3 currentpos = GetTargetPosition() - transform.forward * CurrentDistance;
-                SetPosition(currentpos);
-
-            }
-            else
-            {
-                transform.position = GetTargetPosition() - transform.forward * CurrentDistance;
-            }
+            transform.position = GetTargetPosition() - transform.forward * CurrentDistance;
         }
 
         private bool GetMouseButton(int mouseId)
@@ -378,11 +360,11 @@ namespace Mogoson.CameraExtension
         #region 摄像机遮挡相关功能
 
         public bool isCanCameraCollider;
-        /// <summary>
-        /// 是否开启通过检测，摄像机和目标物体之间是否被遮挡，获取摄像机合适的位置
-        /// </summary>
-        [HideInInspector]
-        public bool isCameraCollider;
+        // /// <summary>
+        // /// 是否开启通过检测，摄像机和目标物体之间是否被遮挡，获取摄像机合适的位置
+        // /// </summary>
+        // [HideInInspector]
+        // public bool isCameraCollider;
         // public MCinemachineCollider mcinemachineCollider;
         Camera cam;
 
@@ -394,6 +376,11 @@ namespace Mogoson.CameraExtension
             }
             return null;
             //return target.transform;
+        }
+
+        public void SetTargetPos(Vector3 pos){
+            targetPos.transform.position=pos;
+            //targetAngles=
         }
 
         public void SetTarget(Transform t)
@@ -459,14 +446,14 @@ namespace Mogoson.CameraExtension
             }
         }
 
-        /// <summary>
-        /// 是否开启通过检测，摄像机和目标物体之间是否被遮挡，获取摄像机合适的位置
-        /// </summary>
-        public void SetisCameraCollider(bool isbool)
-        {
-            if (!isCanCameraCollider) return;
-            isCameraCollider = isbool;
-        }
+        // /// <summary>
+        // /// 是否开启通过检测，摄像机和目标物体之间是否被遮挡，获取摄像机合适的位置
+        // /// </summary>
+        // public void SetisCameraCollider(bool isbool)
+        // {
+        //     if (!isCanCameraCollider) return;
+        //     isCameraCollider = isbool;
+        // }
 
         [ContextMenu("SetTest")]
         public void SetTest()

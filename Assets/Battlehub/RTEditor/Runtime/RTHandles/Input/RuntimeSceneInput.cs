@@ -156,10 +156,14 @@ namespace Battlehub.RTHandles
             }
         }
 
-        public bool EnableSelection=true;
+        public bool EnableSelection=true;//cww
+
+        public bool EnableUpdate=true;//cww
 
         protected override void LateUpdate()
         {
+            if(EnableUpdate==false)return;
+            
             if (!m_component.IsWindowActive)
             {
                 return;

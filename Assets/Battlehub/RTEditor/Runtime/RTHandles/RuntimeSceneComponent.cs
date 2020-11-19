@@ -141,6 +141,16 @@ namespace Battlehub.RTHandles
         private bool m_canFreeMove = true;
         [SerializeField]
         private float m_orbitDistance = 5.0f;
+
+
+        public float OrbitDistance
+        {
+            get
+            {
+                return m_orbitDistance;
+            }
+        }
+
         [SerializeField]
         private float m_zoomSpeed = 5.0f;
         [SerializeField]
@@ -153,10 +163,15 @@ namespace Battlehub.RTHandles
         private bool m_rotationInvertX = false;
         [SerializeField]
         private bool m_rotationInvertY = false;
-
+        [SerializeField]
         private Quaternion m_targetRotation;
+        [SerializeField]
+        private Vector3 m_targetAngles;
+        [SerializeField]
         private Vector3 m_targetPosition;
+        [SerializeField]
         private Quaternion m_prevCamRotation;
+        [SerializeField]
         private Vector3 m_prevCamPosition;
         private bool m_isSceneGizmoOrientationChanging;
         
@@ -265,15 +280,23 @@ namespace Battlehub.RTHandles
             }
         }
 
+        public void SetPivotEx(Vector3 pos){ //cww
+            this.Pivot = pos;
+            this.CameraPosition=this.CameraPosition;//必须要有，不然m_targetPosition，m_targetRotation不会变化，还是会转回去
+        }
+
         public override Vector3 CameraPosition
         {
             get { return base.CameraPosition; }
             set
             {
-                base.CameraPosition = value;
                 Transform camTransform = Window.Camera.transform;
+
+                base.CameraPosition = value;
+                
                 m_targetPosition = camTransform.position;
                 m_targetRotation = camTransform.rotation;
+                m_targetAngles = m_targetRotation.eulerAngles;
                 m_orbitDistance = (Pivot - m_targetPosition).magnitude;
             }
         }
@@ -782,6 +805,7 @@ namespace Battlehub.RTHandles
                 Quaternion.Euler(rotate.y, 0, 0) *
                 Quaternion.Inverse(m_targetRotation) *
                 Quaternion.Euler(0, -rotate.x, 0));
+            m_targetAngles = m_targetRotation.eulerAngles;
 
             if(m_freeRotationSmoothSpeed <= 0)
             {
@@ -795,6 +819,7 @@ namespace Battlehub.RTHandles
                         camTransform.rotation,
                         m_targetRotation,
                         m_freeRotationSmoothSpeed * Time.deltaTime);
+                    //Debug.Log("camTransform.rotation:"+camTransform.rotation.eulerAngles);
                 }
             }
 

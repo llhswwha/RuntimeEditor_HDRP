@@ -557,6 +557,10 @@ public class MsgType
         public const string TypeName = "ModuleToolbarMsg";
         public const string ChangeImage = "ChangeImage";
         public const string SetViewMode = "SetViewMode";
+
+        public const string CloseWindow = "CloseWindow";
+
+        public const string ShowWindow = "ShowWindow";
     }
 
     public class FunctionSwitchBarMsg
@@ -946,4 +950,25 @@ public class MsgType
         public const string ShowPageInfo = "ShowPageInfo";
     }
     #endregion
+
+    public class LoadModelMsg
+    {
+        public const string TypeName="LoadModelMsg";
+        public const string OnBeforeLoadModel="OnBeforeLoadModel";
+        public const string OnAfterLoadModel="OnAfterLoadModel";
+    }
+
+    public class ModelScaneMsg
+    {
+        public const string TypeName="ModelScaneMsg";
+        public const string StartSubScanners="StartSubScanners";
+    }
+
+    public class RTEditorMsg
+    {
+        public const string TypeName="RTEditorMsg";
+        public const string OnEditorClosed="EditorClosed";
+
+        public const string OnSelectionChanged="OnSelectionChanged";
+    }
 }

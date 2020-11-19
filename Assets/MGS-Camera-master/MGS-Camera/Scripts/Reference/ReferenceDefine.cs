@@ -108,6 +108,14 @@ namespace Mogoson.CameraExtension
             }
         }
 
+        public void SetPosition(Vector3 pos){
+            if (transform)
+            {
+                transform.position=pos;
+            }
+            this.position=pos;
+        }
+
         public void SetTransform(Transform transform)
         {
             this.transform = transform;

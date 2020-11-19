@@ -112,6 +112,7 @@ namespace Battlehub
         public void LoadStringResources(string path)
         {
             string prefix = "." + m_locale;
+             Debug.Log("Localization.LoadStringResources:"+(path + prefix));
             TextAsset textAsset = Resources.Load<TextAsset>(path + prefix);
             if (textAsset == null)
             {
@@ -126,6 +127,7 @@ namespace Battlehub
         {
             try
             {
+               
                 StringResources stringResources = XmlUtility.FromXml<StringResources>(textAsset.text);
                 foreach (StringResource stringResource in stringResources.Resources)
                 {

@@ -83,6 +83,9 @@ namespace Mogoson.CameraExtension
         /// </summary>
         protected void TranslateByMouseInput()
         {
+            if(targetCamera==null){
+                targetCamera=Camera.main.transform;
+            }
             // if (RoomFactory.Instance && RoomFactory.Instance.RemoteMode == RemoteMode.RenderStreaming)
             // {
             //     TranslateByMouseInputSystem();
@@ -169,11 +172,20 @@ namespace Mogoson.CameraExtension
             }
         }
 
+        public Vector2 GetMousePos(){
+            if(Mouse.current!=null){
+                return Mouse.current.position.ReadValue();
+            }
+            else{
+                return new Vector2(Input.mousePosition.x,Input.mousePosition.y);
+            }
+        }
+
         private Vector2 MouseOffsetByInputSystem()
         {
-            Vector2 mouseOffset = Mouse.current.position.ReadValue() - new Vector2(mousePositionOri.x, mousePositionOri.y);
+           Vector2 mouseOffset = GetMousePos() - new Vector2(mousePositionOri.x, mousePositionOri.y);
             //Debug.Log("MouseOffset:(" + mouseOffset.x + "," + mouseOffset.y + ")");
-            mousePositionOri = Mouse.current.position.ReadValue();
+            mousePositionOri = GetMousePos();
             float x = mouseOffset.x / 30f;
             float y = mouseOffset.y / 30f;   //12
             //if (x != 0 && y != 0)

@@ -297,6 +297,11 @@ namespace Battlehub.RTHandles
             set { Window.Camera.orthographicSize = value; }
         }
 
+        public Transform CameraTransform
+        {
+            get { return Window.Camera.transform; }
+        }
+
         public virtual Vector3 CameraPosition
         {
             get { return Window.Camera.transform.position; }
@@ -312,6 +317,7 @@ namespace Battlehub.RTHandles
             get { return m_pivot.transform.position; }
             set
             {
+                //Debug.Log("RuntimeSelectionComponent.SetPivot:"+value);
                 m_pivot.transform.position = value;
                 Window.Camera.transform.LookAt(Pivot);
             }
@@ -1131,8 +1137,14 @@ namespace Battlehub.RTHandles
             }
         }
 
+        public void FocusGO(GameObject go){
+            SelectGO(false,true,go);
+            Focus(FocusMode.Default);
+        }
+
         private void SelectGO(bool multiselect, bool allowUnselect, GameObject hitGO)
         {
+            Debug.Log(string.Format("RuntimeSelectionComponent.SelectGO go:{0} multiselect:{1} allowUnselect:{2}",hitGO,multiselect,allowUnselect));
             if (multiselect)
             {
                 List<UnityObject> selectionList;

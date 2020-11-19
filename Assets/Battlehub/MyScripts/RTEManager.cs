@@ -6,7 +6,7 @@ using Battlehub.RTEditor;
 using Battlehub.RTEditor.HDRP;
 using Mogoson.CameraExtension;
 using Battlehub.RTHandles;
-
+using System;
 public class RTEManager : MonoBehaviour
 {
     public static RTEManager Instance;
@@ -64,8 +64,13 @@ public class RTEManager : MonoBehaviour
             ToggleToolbar();
             hdrpInit.EnableOutline();
 
+            LoadPivot();
+
             Y_UIFramework.UIManager.GetInstance().ShowUIPanel("ModelSystemTreePanel");
             Y_UIFramework.MessageCenter.SendMsg(MsgType.ModelSystemTreePanelMsg.TypeName, MsgType.ModelSystemTreePanelMsg.ShowModelTree, null);
+            Y_UIFramework.MessageCenter.SendMsg(MsgType.ModuleToolbarMsg.TypeName, MsgType.ModuleToolbarMsg.ShowWindow, null);
+            Y_UIFramework.MessageCenter.SendMsg(MsgType.RTEditorMsg.TypeName, MsgType.RTEditorMsg.OnEditorClosed, null);
+            
         }
     }
 
@@ -81,8 +86,11 @@ public class RTEManager : MonoBehaviour
         }
     }
 
-    private void HideToolbar(){
+    public void HideToolbar(){
         Debug.Log("HideToolbar");
+
+        InstantiateToolBar();
+
         IsToolBarVisible=false;
         ToolBar.HideToolbar();
         ToolBar.gameObject.SetActive(false);
@@ -91,8 +99,11 @@ public class RTEManager : MonoBehaviour
 
     }
 
-    private void ShowToolbar(){
+    public void ShowToolbar(){
         Debug.Log("ShowToolbar");
+
+        InstantiateToolBar();
+
         IsToolBarVisible=true;
         ToolBar.gameObject.SetActive(true);
         ToolBar.ShowToolbar();
@@ -104,9 +115,6 @@ public class RTEManager : MonoBehaviour
     {
         Debug.Log("ToggleToolbar");
         Debug.Log("ToolBar isnull:"+(ToolBar==null));
-
-        InstantiateToolBar();
-
         if(IsToolBarVisible){
             HideToolbar();
         }
@@ -133,6 +141,10 @@ public class RTEManager : MonoBehaviour
     public CreateEditor RTEditor;
 
     public GameObject EditButton;
+    
+    public Vector3 PivotPos;
+
+    public Vector3 CameraPos;
 
     public void OpenSceneEditor(){
         // IsToolBarVisible=false;
@@ -140,8 +152,24 @@ public class RTEManager : MonoBehaviour
         // // HandleRootObj.SetActive(false);
         // ToolBar.Close();
         // ToolBar=null;
+
+        // SavePivot();
    
         RTEditor.OnOpen();
+    }
+
+    [UnityEngine.ContextMenu("SavePivot")]
+    public void SavePivot(){
+        Debug.Log("SavePivot");
+        PivotPos=sceneCompnent.Pivot;
+        CameraPos=sceneCompnent.CameraPosition;
+    }
+
+    [UnityEngine.ContextMenu("LoadPivot")]
+    public void LoadPivot(){
+        Debug.Log("LoadPivot");
+        sceneCompnent.Pivot=PivotPos;
+        sceneCompnent.CameraPosition=CameraPos;
     }
 
     private void OnDestroy()
@@ -177,10 +205,14 @@ public class RTEManager : MonoBehaviour
         // editor.TestDoDestroyed();
 
         Y_UIFramework.MessageCenter.SendMsg(MsgType.ModelSystemTreePanelMsg.TypeName, MsgType.ModelSystemTreePanelMsg.CloseWindow, null);
+        Y_UIFramework.MessageCenter.SendMsg(MsgType.ModuleToolbarMsg.TypeName, MsgType.ModuleToolbarMsg.CloseWindow, null);
+
     }
 
     private void OnEditorBeforeOpen(object sender)
     {
+        SavePivot();
+
         IsToolBarVisible=false;
         IsEditorOpen=true;
         // HandleRootObj.SetActive(false);
@@ -231,6 +263,7 @@ public class RTEManager : MonoBehaviour
 
     public AroundAlignCamera aroundAlignCamera;
 
+    public MouseTranslatePro mouseTranslate;
     public RuntimeSceneComponent sceneCompnent;
 
     [UnityEngine.ContextMenu("LookFreeToLookAround")]
@@ -247,17 +280,37 @@ public class RTEManager : MonoBehaviour
             aroundAlignCamera = GameObject.FindObjectOfType<AroundAlignCamera>();
         }
 
+        if(mouseTranslate==null){
+            mouseTranslate = GameObject.FindObjectOfType<MouseTranslatePro>();
+        }
+
         if (aroundAlignCamera != null)
         {
             aroundAlignCamera.enabled = enable;
         }
 
-        // if (enable)
-        // {
-        //     if(aroundAlignCamera!=null && sceneCompnent!=null 
-        //         && aroundAlignCamera.GetTarget().position != sceneCompnent.Pivot)
-        //         aroundAlignCamera.GetTarget().position = sceneCompnent.Pivot;
-        // }
+        if (enable)
+        {
+            SetRotateCenter();
+        }
+    }
+
+    private void SetRotateCenter(){
+        if(aroundAlignCamera!=null && sceneCompnent!=null)
+        {
+            //aroundAlignCamera.GetTarget().position = sceneCompnent.Pivot;
+            aroundAlignCamera.SetTargetEx(sceneCompnent.Pivot
+            ,sceneCompnent.CameraTransform.rotation.eulerAngles,
+            sceneCompnent.OrbitDistance);
+
+            mouseTranslate.SetTranslatePosition(sceneCompnent.Pivot,true);
+        }
+    }
+
+    private void OnSelectionChanged(object sender, EventArgs e)
+    {
+        Debug.Log("RTEManager.OnSelectionChanged :"+sceneCompnent.Selection.activeObject+"|"+e+"|"+sender);
+        Y_UIFramework.MessageCenter.SendMsg(MsgType.RTEditorMsg.TypeName, MsgType.RTEditorMsg.OnSelectionChanged, sceneCompnent.Selection.activeObject);
     }
 
     private void SetLookFreeEnable(bool enable)
@@ -265,6 +318,7 @@ public class RTEManager : MonoBehaviour
         if (sceneCompnent == null)
         {
             sceneCompnent = GameObject.FindObjectOfType<RuntimeSceneComponent>();
+            sceneCompnent.SelectionChanged += OnSelectionChanged;
         }
         if(sceneCompnent!=null)
         {
@@ -276,14 +330,29 @@ public class RTEManager : MonoBehaviour
 
         if (enable)
         {
-            if (aroundAlignCamera != null && sceneCompnent != null)
-            {
-                Vector3 pos= aroundAlignCamera.GetTargetPosition();
-                sceneCompnent.Pivot = pos;
-                Debug.LogError("SetLookFreeEnable:" + pos+"|"+ sceneCompnent.Pivot);
-            }
-                
+            SetPivot();
         }
+    }
+
+    [UnityEngine.ContextMenu("SetPivot")]
+    public void SetPivot(){
+        if (aroundAlignCamera != null && sceneCompnent != null)
+        {
+            Vector3 pos0=sceneCompnent.Pivot;
+            Vector3 pos= aroundAlignCamera.GetTargetPosition();
+            Debug.LogError("SetPivot:" + pos0+"->"+pos);
+            sceneCompnent.SetPivotEx(pos);
+        } 
+    }
+
+    [UnityEngine.ContextMenu("SetCamPos")]
+    public void SetCamPos(){
+        if (aroundAlignCamera != null && sceneCompnent != null)
+        {
+            Debug.Log("camTransform.rotation.eulerAngles 1:"+sceneCompnent.CameraTransform.rotation.eulerAngles);
+            sceneCompnent.CameraPosition=sceneCompnent.CameraPosition;
+            Debug.Log("camTransform.rotation.eulerAngles 2:"+sceneCompnent.CameraTransform.rotation.eulerAngles);
+        } 
     }
 
     [UnityEngine.ContextMenu("LookAroundToLookFree")]
@@ -291,5 +360,24 @@ public class RTEManager : MonoBehaviour
     {
         SetLookAroundEnable(false);
         SetLookFreeEnable(true);
+    }
+
+    public GameObject TestFocusObj;
+
+    [UnityEngine.ContextMenu("TestFocus")]
+    public void TestFocus(){
+        this.FocusGO(TestFocusObj);
+    }
+
+    public void FocusGO(GameObject go){
+        if(sceneCompnent!=null){
+
+            sceneCompnent.FocusGO(go);
+            Y_UIFramework.MessageCenter.SendMsg(MsgType.ModelScaneMsg.TypeName, MsgType.ModelScaneMsg.StartSubScanners, go);
+        }
+        else{
+            Debug.LogError("FocusGO sceneCompnent == null !!");
+        }
+        
     }
 }

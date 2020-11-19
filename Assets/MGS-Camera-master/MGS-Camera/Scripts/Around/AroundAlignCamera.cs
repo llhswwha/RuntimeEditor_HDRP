@@ -295,6 +295,19 @@ namespace Mogoson.CameraExtension
             AlignVeiwToTarget();
         }
 
+        public void SetTargetEx(Vector3 centerPos, Vector2 angles, float distance)
+        {
+            //target = center;
+            targetPos.SetPosition(centerPos);
+            targetAngles = angles;
+            targetDistance = distance;
+
+            CurrentAngles=targetAngles;
+            CurrentDistance=targetDistance;
+
+            //AlignVeiwToTarget();
+        }
+
         public void AlignVeiwToTarget(Transform center)
         {
             targetPos = new TransformPos(center);

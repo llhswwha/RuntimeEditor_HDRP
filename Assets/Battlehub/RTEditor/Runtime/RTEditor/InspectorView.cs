@@ -54,7 +54,7 @@ namespace Battlehub.RTEditor
         protected override void OnDestroyOverride()
         {
             base.OnDestroyOverride();
-            if(Editor != null)
+            if(Editor != null && Editor.Selection!=null)
             {
                 Editor.Selection.SelectionChanged -= OnRuntimeSelectionChanged;
             }

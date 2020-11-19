@@ -45,20 +45,27 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\Battlehub_RTEditor_Battlehub_SL2_PersistentRuntimeAnimation.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_Burst.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentCanvas.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\TestJson\PersonInfo.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentHumanLimit.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentParticleSystem_ExternalForcesModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystemForceField.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_ProBuilderIntegration_Battlehub_SL2_PersistentPBFace.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_ProBuilderIntegration_Battlehub_SL2_PersistentPBAutoUnwrapSettings.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_RTEditor_Battlehub_SL2_PersistentRuntimeAnimationProperty.cs" />
+     <Compile Include="Assets\Unity.Modules\Unity.Modules.Context\GlobalState.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_RTEditor_Battlehub_SL2_PersistentRuntimeAnimationClip.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentSkinnedMeshRenderer.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentTerrainData.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\UIBasePanel.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\Battlehub_RTEditor_Battlehub_SL2_PersistentRuntimeAnimationClip.cs" />
+     <Compile Include="Assets\MouseTranslatePro.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\PropDetailUIForm.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentParticleSystem.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentSpriteState.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentSpriteRenderer.cs" />
      <Compile Include="Assets\MGS-Camera-master\MGS-Camera\Scripts\Around\MouseFocus.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\HeroInfoUIForm.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\Localization\LauguageMgr.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystemRenderer.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentMaskableGraphic.cs" />
      <Compile Include="Assets\MGS-Camera-master\MGS-CommonCode\UI\HelpInfo.cs" />
@@ -76,14 +83,22 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentTerrainCollider.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentImage.cs" />
      <Compile Include="Assets\Battlehub\MyScripts\RTSelectionTool.cs" />
+     <Compile Include="Assets\UGUIFollow\Scripts\UGUIFollowManage.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentAnimationCurve.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_EmissionModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentFlare.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_RTCommon_Battlehub_SL2_PersistentExposeToEditor.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\MainCityUIForm.cs" />
+     <Compile Include="Assets\Unity.Modules\Unity.Modules.Context\IDevManager.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentMatrix4x4.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_ExternalForcesModule.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\SelectHeroUIForm.cs" />
+     <Compile Include="Assets\AutoFoam\AutoRoamPanel.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\TestJson\People.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\Config\IConfigManager.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentParticleSystem_SubEmittersModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_EventSystems_Battlehub_SL2_PersistentStandaloneInputModule.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\MsgType.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentTreePrototype.cs" />
      <Compile Include="Assets\MGS-Camera-master\MGS-Camera\Scripts\Translate\MouseTranslate.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentSkybox.cs" />
@@ -104,13 +119,15 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentGraphic.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_MinMaxCurve.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_ColorOverLifetimeModule.cs" />
+     <Compile Include="Assets\AutoFoam\AutoRoamPoint.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentGradientAlphaKey.cs" />
-     <Compile Include="Assets\Battlehub\MyScripts\RTEManager.cs" />
+     <Compile Include="Assets\Battlehub\MyScripts\RTEToolBar.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentOutline.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentRenderTexture.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_RTEditor_Battlehub_SL2_PersistentGameViewCamera.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_MinMaxGradient.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_RTEditor_Battlehub_SL2_PersistentRuntimeAnimation.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\EventAndMessage\MessageCenter.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\TypeMapCreator.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentRect.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_ProBuilderIntegration_Battlehub_SL2_PersistentPBPolyShape.cs" />
@@ -128,7 +145,11 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentBaseMeshEffect.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentMaterial.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_LightsModule.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\Config\BasicDefine.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\TestJson\TestUnityJson2.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentButton_ButtonClickedEvent.cs" />
+     <Compile Include="Assets\Unity.Modules\Unity.Modules.Debug\Log.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\TestJson\Hero.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_RotationBySpeedModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_ColorBySpeedModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentLayerMask.cs" />
@@ -136,13 +157,20 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentAvatar.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_EventSystems_Battlehub_SL2_PersistentUIBehaviour.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentTerrainLayer.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\UIType.cs" />
+     <Compile Include="Assets\Unity.Modules\Unity.Modules.UI\UGUIFollow\UGUIFollowTarget.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentAnimationTriggers.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Audio_Battlehub_SL2_PersistentAudioMixerGroup.cs" />
+     <Compile Include="Assets\Battlehub\MyScripts\CameraFrameSettings.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentRuntimeAnimatorController.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentBoxCollider.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\Exception\JsonAnlysisException.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_TextureSheetAnimationModule.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\LogonUIForm.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_CollisionModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentAudioClip.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\StartProject.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\MarketUIFrom.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentSphereCollider.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentParticleSystem_TriggerModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentMaskableGraphic_CullStateChangedEvent.cs" />
@@ -150,9 +178,13 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentAudioSource.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_ForceOverLifetimeModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentPhysicMaterial.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\Helps\UIMaskMgr.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\Log\YLog.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentTexture2D.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentParticleSystemForceField.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\TestJson\TestUnityJson.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentFont.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\TestJson\Level.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentGraphicRaycaster.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentTexture.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentRenderer.cs" />
@@ -163,9 +195,13 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentAvatar.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentLightBakingOutput.cs" />
+     <Compile Include="Assets\Battlehub\MyScripts\RotateBehaviour.cs" />
+     <Compile Include="Assets\AutoFoam\AutoFoam.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentRigidbody.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\Test\Test.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\TypeModelCreator.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentLight.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\UIManager.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentRectTransform.cs" />
      <Compile Include="Assets\MGS-Camera-master\MGS-Camera\Scripts\Around\AroundCamera.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_Cubeman_Battlehub_SL2_PersistentGameCameraFollow.cs" />
@@ -180,10 +216,12 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_SizeOverLifetimeModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\Battlehub_RTEditor_Battlehub_SL2_PersistentRuntimeAnimationProperty.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentCamera.cs" />
+     <Compile Include="Assets\Unity.Modules\Unity.Modules.Context\IMessageBox.cs" />
      <Compile Include="Assets\MGS-Camera-master\MGS-Camera\Scripts\Reference\ReferenceDefine.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_Cubeman_Battlehub_SL2_PersistentCubemenGame.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentGradientColorKey.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_CustomDataModule.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\Helps\ResourcesMgr.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_NoiseModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentNavigation.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentColorBlock.cs" />
@@ -191,21 +229,29 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentTerrainData.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_RTCommon_Battlehub_SL2_PersistentExposeToEditorUnityEvent.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentAudioClip.cs" />
+     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\EventAndMessage\EventTriggerListener.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentHumanBone.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentAnimator.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentLineRenderer.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\Config\ConfigManagerByJson.cs" />
+     <Compile Include="Assets\Unity.Modules\Unity.Modules.Context\IDevSubSystem.cs" />
+     <Compile Include="Assets\Battlehub\MyScripts\RTEManager.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentMonoBehaviour.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_VelocityOverLifetimeModule.cs" />
+     <Compile Include="Assets\Y_UIFramework\ZDemoProject\ProConst.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_TriggerModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_EventSystems_Battlehub_SL2_PersistentBaseRaycaster.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentMaterial.cs" />
+     <Compile Include="Assets\Y_UIFramework\Scripts\Helps\UnityHelper.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentMeshRenderer.cs" />
+     <Compile Include="Assets\Battlehub\MyScripts\MaterialUtils.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentSelectable.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentBehaviour.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_Cubeman_Battlehub_SL2_PersistentCubemanCharacter.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_Cubeman_Battlehub_SL2_PersistentGameFerryButton.cs" />
-     <Compile Include="Assets\Battlehub\MyScripts\RotateBehaviour.cs" />
+     <Compile Include="Assets\Battlehub\MyScripts\DataComponent.cs" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\SelectionPicker.shader" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Shaders\Resources\UnlitColor.shader" />
@@ -213,6 +259,7 @@
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Battlehub\Third-Party Notices.txt" />
      <None Include="Assets\Battlehub\Materials\Lit.shader" />
+     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
      <None Include="Assets\Battlehub\README.txt" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Shaders\Resources\Grid.shader" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\NormalsPreview.shader" />
@@ -220,9 +267,12 @@
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\FaceHighlight.shader" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\VertexShader.shader" />
+     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
+     <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
      <None Include="Assets\Battlehub\RTScripting\Content\Runtime\Resources\RTScripting.StringResources.en-US.xml" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Shaders\Resources\BoxSelectionShader.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTCommon\Resources\RenderTextureOverlay.shader" />
+     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTEditor\Prefabs\Views\Resources\TemplateWindow.cs.txt" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTGizmos\Shaders\Resources\Handles.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Prefabs\Models\Materials\Shaders\DepthMaskColorBillboardShader.shader" />
@@ -252,7 +302,9 @@
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTEditor\Prefabs\AnimationEditor\TimelineControl\Resources\TimelineGrid.shader" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTDeformer\Resources\RTDeformer.StringResources.en-US.xml" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Demigiant\DemiLib\DemiLib.xml" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTEditor\Resources\RTEditor.StringResources.en-US.xml" />
+     <None Include="Assets\Demigiant\DOTweenPro\readme.txt" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\PointBillboard.shader" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\MeshEditor\Resources\FaceHighlight.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Shaders\Resources\VertexColorClipUsingClipPlane.shader" />
@@ -264,6 +316,7 @@
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTCommon\Resources\LineBillboard.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTEditor\Prefabs\AnimationEditor\TimelineControl\Resources\UnlitTextureInstanced.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\Tools\ObjectWireframe\Resources\LineBillboard.shader" />
+     <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\UIControls\DockPanels\Shaders\DepthMask.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Outline\Resources\UnityOutline.cginc" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTTerrain\Resources\RTTerrain.StringResources.en-US.xml" />
@@ -477,6 +530,42 @@
     </Reference>
     <Reference Include="protobuf-net">
         <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Battlehub/RTEditor/ThirdParty/protobuf-net/protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="DemiLib">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DemiLib/DemiLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Base.Common">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Plugins/Lib/Base.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Common">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Plugins/Lib/Unity.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DownLoadHelper">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Plugins/Lib/ThirdAssets/DownLoadHelper/DownLoadHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="LOOM Framework">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Plugins/Lib/ThirdAssets/LOOM Framework/LOOM Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="DestMath">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Plugins/Lib/ThirdAssets/MathLibraryForUnity/DestMath.dll</HintPath>
+    </Reference>
+    <Reference Include="MathLibraryForUnity">
+        <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Assets/Plugins/Lib/ThirdAssets/MathLibraryForUnity/MathLibraryForUnity.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
         <HintPath>D:/WorkSpace/GitHub/RuntimeEditor_HDRP/Library/PackageCache/com.unity.burst@1.3.7/Unity.Burst.Unsafe.dll</HintPath>
