@@ -5705,7 +5705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stringResources:
   - RTEditor.StringResources
-  m_locale: en-US
+  m_locale: zh-CN
 --- !u!114 &8625210287196057100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6660,6 +6660,11 @@ MonoBehaviour:
   m_zoomSpeedDefault: 5
   m_constantZoomSpeedDefault: 0
   m_systemOfMeasurementDefault: 0
+  m_lightColorDefault: {r: 1, g: 1, b: 1, a: 1}
+  m_ligthIntensityDefault: 0
+  m_shadowTypeDefault: 2
+  m_shadowStrengthDefault: 0
+  EnableLightSetting: 0
 --- !u!1 &8542107607106254151
 GameObject:
   m_ObjectHideFlags: 0

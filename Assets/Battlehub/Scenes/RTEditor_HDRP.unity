@@ -2171,6 +2171,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 917.99994
       objectReference: {fileID: 0}
+    - target: {fileID: 7167785723158027269, guid: 25045c634059d924bbe26df0556c6ff7, type: 3}
+      propertyPath: m_locale
+      value: zh-CN
+      objectReference: {fileID: 0}
     - target: {fileID: 7663802960319596385, guid: 25045c634059d924bbe26df0556c6ff7, type: 3}
       propertyPath: m_AnchorMin.y
       value: 1

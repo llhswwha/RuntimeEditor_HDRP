@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: LiberationSans SDF
+  m_Name: simsun SDF
   m_EditorClassIdentifier: 
-  hashCode: 231247347
+  hashCode: -2066574962
   material: {fileID: 4221876400069938461}
-  materialHashCode: 198912371
+  materialHashCode: -61917074
   m_Version: 1.1.0
   m_SourceFontFileGUID: bbabc922959551a4da18cf8bbb552392
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: bbabc922959551a4da18cf8bbb552392, type: 3}
