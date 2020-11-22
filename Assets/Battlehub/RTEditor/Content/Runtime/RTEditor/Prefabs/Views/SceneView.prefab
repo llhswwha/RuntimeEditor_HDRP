@@ -137,6 +137,7 @@ MonoBehaviour:
   m_beginRotateImmediately: 1
   m_beginFreeMoveImmediately: 1
   EnableSelection: 1
+  EnableUpdate: 1
 --- !u!114 &114970690636574616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_window: {fileID: 6898960901341884732}
+  ComponentId: 0
   m_outlineManager: {fileID: 0}
   m_positionHandle: {fileID: 114548617390737058}
   m_rotationHandle: {fileID: 114886837775755408}
@@ -164,6 +166,7 @@ MonoBehaviour:
   m_canSelectAll: 1
   m_canSelectExposedOnly: 1
   InitPivotPos: {x: 0, y: 0, z: 0}
+  SceneId: 0
   ViewTexture: {fileID: 0}
   MoveTexture: {fileID: 0}
   FreeMoveTexture: {fileID: 0}
@@ -181,6 +184,11 @@ MonoBehaviour:
   m_freeRotationSmoothSpeed: 10
   m_rotationInvertX: 0
   m_rotationInvertY: 0
+  m_targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_targetAngles: {x: 0, y: 0, z: 0}
+  m_targetPosition: {x: 0, y: 0, z: 0}
+  m_prevCamRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_prevCamPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &8513267411312411289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +348,7 @@ MonoBehaviour:
   m_renderTextureUsage: 0
   m_camera: {fileID: 4784833976956820791}
   m_pointer: {fileID: 0}
+  WndId: 0
 --- !u!222 &5252423299992472042
 CanvasRenderer:
   m_ObjectHideFlags: 0
