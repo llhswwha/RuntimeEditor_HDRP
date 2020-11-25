@@ -161,6 +161,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7414596508413408732}
+  - component: {fileID: 7414596508413408733}
+  - component: {fileID: 7414596508413408730}
   m_Layer: 0
   m_Name: CameraMouseControl
   m_TagString: Untagged
@@ -181,6 +183,189 @@ Transform:
   m_Children:
   - {fileID: 7414596507251439800}
   - {fileID: 7414596507696250079}
+  - {fileID: 7418802184239054383}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7414596508413408733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414596508413408735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9cb069c8cb3854eaaca80756565c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
+  alignCamera: {fileID: 0}
+  IsFocus: 0
+  mouseTranslate: {fileID: 7414596507251439801}
+  theThirdPersonCamera: {fileID: 0}
+  FocusPosScale: {x: 0.1, y: 0.1, z: 0.1}
+  FocusPosObj: {fileID: 0}
+  FocusDistance: 5
+  IsSpace: 0
+  IsCtrSpace: 0
+  HitPos: {x: 0, y: 0, z: 0}
+  HitObject: {fileID: 0}
+  EnableCtrMode: 1
+  IsCtrKey: 0
+  zoomCoefficient: 0.05
+  moveCoefficient: 0.002
+  rotateCoefficient: 0.0025
+  CtrPower: 0.1
+  disToCamera: 0
+  zoomSensitivity: 0
+  moveSensitivity: 0
+  roateSensitivity: 0
+--- !u!114 &7414596508413408730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414596508413408735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bad016bb70440e43a0a4da64cfad6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderingObjects:
+  - {fileID: 0}
+  _path: 'rtsp://admin:admin12345@192.168.1.56/h264/ch1/main/av_stream '
+  _autoPlay: 0
+  _loop: 0
+  _loopSmooth: 0
+  _mute: 0
+  _useAdvanced: 0
+  _useFixedSize: 0
+  _fixedVideoWidth: -1
+  _fixedVideoHeight: -1
+  _chosenPlatform: 0
+  _volume: 50
+  _playRate: 1
+  _position: 0
+  _logDetail: 0
+  _lastEventMsg: 
+  _desktopAudioOutputs: []
+  _desktopHardwareDecoding: -1
+  _desktopFlipVertically: 1
+  _desktopVideoBufferSize: 0
+  _desktopOutputToFile: 0
+  _desktopDisplayOutput: 0
+  _desktopOutputFilePath: 
+  _desktopRtspOverTcp: 0
+  _desktopFileCaching: 300
+  _desktopLiveCaching: 300
+  _desktopDiskCaching: 300
+  _desktopNetworkCaching: 300
+  _androidPlayerType: 2
+  _androidHardwareAcceleration: -1
+  _androidOpenGLDecoding: 0
+  _androidVideoChroma: 1
+  _androidPlayInBackground: 0
+  _androidRtspOverTcp: 0
+  _androidNetworkCaching: 300
+  _iphonePlayerType: 2
+  _iphoneFlipVertically: 1
+  _iphoneVideoToolbox: 1
+  _iphoneVideoToolboxMaxFrameWidth: 4096
+  _iphoneVideoToolboxAsync: 0
+  _iphoneVideoToolboxWaitAsync: 1
+  _iphonePlayInBackground: 0
+  _iphoneRtspOverTcp: 0
+  _iphonePacketBuffering: 1
+  _iphoneMaxBufferSize: 15728640
+  _iphoneMinFrames: 50000
+  _iphoneInfbuf: 0
+  _iphoneFramedrop: 0
+  _iphoneMaxFps: 31
+  _pathPreparedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _openingEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _bufferingEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _imageReadyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _preparedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _playingEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _pausedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _stoppedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _endReachedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _encounteredErrorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _timeChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _positionChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _snapshotTakenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1001 &7414596507955768597
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7414596508413408732}
+    m_Modifications:
+    - target: {fileID: 4804293844259642, guid: 147cceb2581172144b185b2121293bfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804293844259642, guid: 147cceb2581172144b185b2121293bfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804293844259642, guid: 147cceb2581172144b185b2121293bfd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804293844259642, guid: 147cceb2581172144b185b2121293bfd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804293844259642, guid: 147cceb2581172144b185b2121293bfd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804293844259642, guid: 147cceb2581172144b185b2121293bfd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804293844259642, guid: 147cceb2581172144b185b2121293bfd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804293844259642, guid: 147cceb2581172144b185b2121293bfd, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 147cceb2581172144b185b2121293bfd, type: 3}
+--- !u!4 &7418802184239054383 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4804293844259642, guid: 147cceb2581172144b185b2121293bfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7414596507955768597}
+  m_PrefabAsset: {fileID: 0}

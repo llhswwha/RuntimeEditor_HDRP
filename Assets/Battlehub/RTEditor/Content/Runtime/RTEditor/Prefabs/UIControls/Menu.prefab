@@ -170,7 +170,8 @@ MonoBehaviour:
         m_Calls: []
     IsVisible: 1
     IsOn: 0
-  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f, type: 3}
+  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f,
+    type: 3}
   m_anchor: {fileID: 0}
   m_anchorOffset: {x: 0, y: 0}
   m_panel: {fileID: 224308982547327976}

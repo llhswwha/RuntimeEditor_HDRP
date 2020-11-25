@@ -336,7 +336,8 @@ namespace Battlehub.RTEditor
         private void OnResetClick()
         {
             IWindowManager wm = IOC.Resolve<IWindowManager>();
-            wm.Confirmation("Reset to defaults confirmation", "Are you sure you want to reset to default settings?",
+			//wm.Confirmation("Reset to defaults confirmation", "Are you sure you want to reset to default settings?",
+            wm.Confirmation("确认重置为默认", "是否确认重置为默认设置?",
                 (dialog, yes) => 
                 {
                     m_settings.ResetToDefaults();
@@ -346,7 +347,7 @@ namespace Battlehub.RTEditor
                     }
                 },
                 (dialog, no) => { },
-                "Yes", "No");
+                "是", "否");
         }
     }
 }

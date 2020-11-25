@@ -161,15 +161,25 @@ public class RTEManager : MonoBehaviour
     [UnityEngine.ContextMenu("SavePivot")]
     public void SavePivot(){
         Debug.Log("SavePivot");
-        PivotPos=sceneCompnent.Pivot;
-        CameraPos=sceneCompnent.CameraPosition;
+        if(sceneCompnent==null){
+            Debug.LogError("SavePivot sceneCompnent==null");
+        }
+        else{
+            PivotPos=sceneCompnent.Pivot;
+            CameraPos=sceneCompnent.CameraPosition;
+        }
     }
 
     [UnityEngine.ContextMenu("LoadPivot")]
     public void LoadPivot(){
         Debug.Log("LoadPivot");
-        sceneCompnent.Pivot=PivotPos;
-        sceneCompnent.CameraPosition=CameraPos;
+        if(sceneCompnent==null){
+            Debug.LogError("LoadPivot sceneCompnent==null");
+        }
+        else{
+            sceneCompnent.Pivot=PivotPos;
+            sceneCompnent.CameraPosition=CameraPos;
+        }
     }
 
     private void OnDestroy()
@@ -371,7 +381,10 @@ public class RTEManager : MonoBehaviour
 
     public void FocusGO(GameObject go){
         if(sceneCompnent!=null){
-
+            if(sceneCompnent.Selection.activeObject==go){
+                Debug.LogWarning("sceneCompnent.Selection.activeObject==go");
+                return;
+            }
             sceneCompnent.FocusGO(go);
             Y_UIFramework.MessageCenter.SendMsg(MsgType.ModelScaneMsg.TypeName, MsgType.ModelScaneMsg.StartSubScanners, go);
         }

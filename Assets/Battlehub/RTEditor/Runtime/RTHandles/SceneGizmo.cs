@@ -773,20 +773,18 @@ namespace Battlehub.RTHandles
             // Debug.Log("PivotPoint:"+PivotPoint);
             // Debug.Log("Anchor:"+Anchor);
 
+            // Debug.Log("RenderPipelineInfo.Type:"+(RenderPipelineInfo.Type));
             // Debug.Log("1:"+(RenderPipelineInfo.Type == RPType.Standard));
             // Debug.Log("2:"+(m_cameraUtility != null));
-            // if(m_cameraUtility!=null){
-            //     Debug.Log("3:"+(m_cameraUtility.IsPostProcessingEnabled(Window.Camera)));
-            // }
 
-            if (RenderPipelineInfo.Type == RPType.Standard 
-            || m_cameraUtility != null 
-            && m_cameraUtility.IsPostProcessingEnabled(Window.Camera))
-            {
-                Debug.Log("change pivotPoint anchor");
-                pivotPoint.y = 1 - pivotPoint.y;
-                anchor.y = 1 - anchor.y;
-            }
+            // if (RenderPipelineInfo.Type == RPType.Standard 
+            // || m_cameraUtility != null 
+            // && m_cameraUtility.IsPostProcessingEnabled(Window.Camera))
+            // {
+            //     Debug.Log("change pivotPoint anchor");
+            //     pivotPoint.y = 1 - pivotPoint.y;
+            //     anchor.y = 1 - anchor.y;
+            // }//cww:这里导致Gizmo的位置和行为很奇怪
 
             // Debug.Log("pivotPoint:"+pivotPoint);
             // Debug.Log("anchor:"+anchor);
