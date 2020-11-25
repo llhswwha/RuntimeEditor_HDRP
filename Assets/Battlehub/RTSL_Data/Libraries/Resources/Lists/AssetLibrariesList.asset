@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b95cccd2e63d23429ee6260c5011223, type: 3}
   m_Name: AssetLibrariesList
   m_EditorClassIdentifier: 
-  Identity: 0
+  Identity: 2
   List:
+  - Library: AssetLibrary1.asset
+    Ordinal: 0
+  - Library: AssetLibrary2.asset
+    Ordinal: 1
   - Library: DemoAssetLibrary.asset
     Ordinal: 16383
