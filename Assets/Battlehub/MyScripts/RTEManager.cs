@@ -7,6 +7,7 @@ using Battlehub.RTEditor.HDRP;
 using Mogoson.CameraExtension;
 using Battlehub.RTHandles;
 using System;
+using UnityEngine.UI;
 public class RTEManager : MonoBehaviour
 {
     public static RTEManager Instance;
@@ -56,11 +57,19 @@ public class RTEManager : MonoBehaviour
         }
     }
 
+    public void EnableHDRP(){
+        hdrpInit.gameObject.SetActive(true);
+    }
+
+    public void DisableHDRP(){
+        hdrpInit.gameObject.SetActive(false);
+    }
+
     public bool IsEditorClosed=false;
 
     void Update(){
-        if(IsEditorClosed){
-            IsEditorClosed=false;
+        if(OnEditorDestroyedFlag){
+            OnEditorDestroyedFlag=false;
             ToggleToolbar();
             hdrpInit.EnableOutline();
 
@@ -71,6 +80,16 @@ public class RTEManager : MonoBehaviour
             Y_UIFramework.MessageCenter.SendMsg(MsgType.ModuleToolbarMsg.TypeName, MsgType.ModuleToolbarMsg.ShowWindow, null);
             Y_UIFramework.MessageCenter.SendMsg(MsgType.RTEditorMsg.TypeName, MsgType.RTEditorMsg.OnEditorClosed, null);
             
+        }
+
+        if(rteBase==null ){
+            rteBase=GameObject.FindObjectOfType<RTEBase>();
+            if(IsEditorOpen==false){ //cww 在ToolBar显示，Editor关闭的情况下，要把RTEBase的射线检测去掉，这样子原有的项目的UI才能点击，不然RTE里面的UI(ScreenSpace-Overlay)会遮挡原来的UI(ScreenSpace-Camera)
+                DisableRaycast();
+                //不知道为什么哦，通过代码这样关闭Raycaster，摄像头的控制还是能用的。但是手动点击的化，摄像头就不能用了。
+                //手动点击 DisableRaycast()菜单，也会导致摄像头无法控制了，只有在这里 Update 设置 DisableRaycast()，才能达到我的目的
+                //很无语，本来打算放弃了的，把原项目UI从 ScreenSpace-Camera改成ScreenSpace-Overlay，再处理一下原来的漂浮UI的问题，结果这样居然可以...
+            }
         }
     }
 
@@ -97,6 +116,7 @@ public class RTEManager : MonoBehaviour
         EditorExtensions.SetActive(false);
         LookFreeToLookAround();
 
+        //DisableRaycast();
     }
 
     public void ShowToolbar(){
@@ -109,6 +129,8 @@ public class RTEManager : MonoBehaviour
         ToolBar.ShowToolbar();
         EditorExtensions.SetActive(true);
         LookAroundToLookFree();
+
+        //EnableRaycast();
     }
 
     public void ToggleToolbar()
@@ -192,12 +214,15 @@ public class RTEManager : MonoBehaviour
         }  
     }
 
+
+    public bool OnEditorDestroyedFlag=false;
     private void OnEditorDestroyed(object sender)
     {
         RuntimeEditor editor=sender as RuntimeEditor;
         Debug.LogError("OnEditorDestroyed:"+sender+"|"+editor.Id);
         //IsEditorOpen=false;
         IsEditorClosed=true;
+        OnEditorDestroyedFlag=true;
         //ToggleToolbar();
 
         // Battlehub.RTCommon.IRTE m_editor = Battlehub.RTCommon.IOC.Resolve<Battlehub.RTCommon.IRTE>();
@@ -392,5 +417,33 @@ public class RTEManager : MonoBehaviour
             Debug.LogError("FocusGO sceneCompnent == null !!");
         }
         
+    }
+
+    public RTEBase rteBase;
+
+    public bool IsRaycastEnabled=true;
+
+    public GraphicRaycaster raycaster;
+
+    [UnityEngine.ContextMenu("EnableRaycast")]
+    public void EnableRaycast(){
+        SetRaycastEnableState(true);
+    }
+
+    [UnityEngine.ContextMenu("DisableRaycast")]
+    public void DisableRaycast(){
+        SetRaycastEnableState(false);
+    }
+
+    public void SetRaycastEnableState(bool v){
+        IsRaycastEnabled=v;
+        if(rteBase==null ){
+            rteBase=GameObject.FindObjectOfType<RTEBase>();
+        }
+        if(raycaster==null && rteBase!=null){
+            raycaster=rteBase.gameObject.GetComponentInChildren<GraphicRaycaster>();
+        }
+        if(raycaster!=null)
+            raycaster.enabled=v;
     }
 }
