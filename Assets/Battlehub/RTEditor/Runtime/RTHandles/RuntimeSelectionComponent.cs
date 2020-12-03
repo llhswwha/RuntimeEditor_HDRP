@@ -1102,6 +1102,10 @@ namespace Battlehub.RTHandles
             }
         }
 
+        public void SelectList(IList<GameObject> hits){
+            SelectGO(true,true,hits,hit=>hit);
+        }
+
         private void SelectGO<T>(bool multiselect, bool allowUnselect, IList<T> hits, Func<T, GameObject> getGameObject)
         {
             
@@ -1142,7 +1146,7 @@ namespace Battlehub.RTHandles
             Focus(FocusMode.Default);
         }
 
-        private void SelectGO(bool multiselect, bool allowUnselect, GameObject hitGO)
+        public void SelectGO(bool multiselect, bool allowUnselect, GameObject hitGO)
         {
             Debug.Log(string.Format("RuntimeSelectionComponent.SelectGO go:{0} multiselect:{1} allowUnselect:{2}",hitGO,multiselect,allowUnselect));
             if (multiselect)
@@ -1288,6 +1292,7 @@ namespace Battlehub.RTHandles
             UnityObject[] filteredSelection;
             if (RaiseSelectionChanging(new UnityObject[0], out filteredSelection))
             {
+                Debug.Log("TryToClearSelection:"+filteredSelection.Length);
                 if (filteredSelection.Length == 0)
                 {
                     Selection.activeObject = null;

@@ -62,7 +62,10 @@ public class RTEToolBar : MonoBehaviour
         toolsInput.gameObject.SetActive(true);
         sceneInput.EnableSelection=true;
 
- 
+        if (SceneGridObj != null)
+        {
+            SceneGridObj.SetActive(true);
+        }
     }
 
     [ContextMenu("HideToolbar")]
@@ -94,6 +97,11 @@ public class RTEToolBar : MonoBehaviour
         selectionComponent.IsRotationHandleEnabled=true;
         selectionComponent.IsScaleHandleEnabled=true;
         selectionComponent.IsRectToolEnabled=true;
+
+        if (SceneGridObj != null)
+        {
+            SceneGridObj.SetActive(true);
+        }
     }
 
     public Battlehub.RTCommon.RTEBase HandleRTE;
@@ -110,5 +118,23 @@ public class RTEToolBar : MonoBehaviour
         }
 
         GameObject.DestroyImmediate(this.gameObject);
+    }
+
+    public GameObject SceneGridObj;
+
+    public void EnableHighlight()
+    {
+        //Gizmo.SetActive(true);
+        if (HdrpObj != null)
+        {
+            HdrpObj.SetActive(true);
+        }
+        toolsInput.gameObject.SetActive(false);
+        sceneInput.EnableSelection = false;
+
+        if (SceneGridObj != null)
+        {
+            SceneGridObj.SetActive(false);
+        }
     }
 }

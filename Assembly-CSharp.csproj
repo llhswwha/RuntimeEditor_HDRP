@@ -100,6 +100,7 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_EventSystems_Battlehub_SL2_PersistentStandaloneInputModule.cs" />
      <Compile Include="Assets\Y_UIFramework\Scripts\MsgType.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentTreePrototype.cs" />
+     <Compile Include="Assets\Battlehub\MyScripts\GUIDAssetInfo.cs" />
      <Compile Include="Assets\MGS-Camera-master\MGS-Camera\Scripts\Translate\MouseTranslate.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentSkybox.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentSkeletonBone.cs" />
@@ -110,6 +111,7 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentMesh.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentParticleSystem_TrailModule.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentKeyframe.cs" />
+     <Compile Include="Assets\Battlehub\MyScripts\DataComponent.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_UI_Battlehub_SL2_PersistentButton.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentGradient.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\CustomImplementation\UnityEngine_Battlehub_SL2_PersistentParticleSystem_TextureSheetAnimationModule.cs" />
@@ -251,7 +253,8 @@
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\UnityEngine_Battlehub_SL2_PersistentBehaviour.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_Cubeman_Battlehub_SL2_PersistentCubemanCharacter.cs" />
      <Compile Include="Assets\Battlehub\RTSL_Data\Scripts\PersistentClasses\Battlehub_Cubeman_Battlehub_SL2_PersistentGameFerryButton.cs" />
-     <Compile Include="Assets\Battlehub\MyScripts\DataComponent.cs" />
+     <Compile Include="Assets\Scripts\IsClickUGUIorNGUI.cs" />
+     <None Include="Assets\Battlehub\Fonts\zh-CN.txt" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\SelectionPicker.shader" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Shaders\Resources\UnlitColor.shader" />
@@ -266,12 +269,14 @@
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Resources\RTBuilder.StringResources.en-US.xml" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\FaceHighlight.shader" />
+     <None Include="Assets\Battlehub\RTScripting\Content\Runtime\Resources\RTScripting.StringResources.zh-CN.xml" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\VertexShader.shader" />
      <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
      <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
      <None Include="Assets\Battlehub\RTScripting\Content\Runtime\Resources\RTScripting.StringResources.en-US.xml" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Shaders\Resources\BoxSelectionShader.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTCommon\Resources\RenderTextureOverlay.shader" />
+     <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTDeformer\Resources\RTDeformer.StringResources.zh-CN.xml" />
      <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTEditor\Prefabs\Views\Resources\TemplateWindow.cs.txt" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTGizmos\Shaders\Resources\Handles.shader" />
@@ -283,6 +288,7 @@
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTEditor\Prefabs\Views\Resources\RegisterTemplateWindow.cs.txt" />
      <None Include="Assets\MGS-Camera-master\MGS-Camera\Readme.txt" />
+     <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTNavigation\Resources\RTNavigation.StringResources.zh-CN.xml" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Prefabs\Models\Materials\Shaders\ArrowShader.shader" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\FacePicker.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Prefabs\Models\Materials\Shaders\DepthMaskColorShader.shader" />
@@ -296,6 +302,7 @@
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Prefabs\Models\Materials\Shaders\SSCircleShader.shader" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Integration\Shaders\SmoothingPreview.shader" />
+     <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTBuilder\Resources\RTBuilder.StringResources.zh-CN.xml" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Prefabs\Models\Materials\Shaders\AxisShader.shader" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
@@ -311,6 +318,7 @@
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Prefabs\Models\Materials\Shaders\SSQuadShader.shader" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Shaders\Resources\Shape.shader" />
+     <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTEditor\Resources\RTEditor.StringResources.zh-CN.xml" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTHandles\Prefabs\Models\Materials\Shaders\QuadShader.shader" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTCommon\Resources\LineBillboard.shader" />
@@ -323,6 +331,7 @@
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTNavigation\Resources\UnlitColor.shader" />
      <None Include="Assets\Battlehub\RTEditor\Content\Runtime\RTCommon\Resources\SceenSpaceDecal.shader" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTTerrain\Resources\RTTerrain.StringResources.zh-CN.xml" />
      <None Include="Assets\Battlehub\ThirdParty\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\Battlehub\RTEditorHDRP\Content\Runtime\RTHandles\Outline\Selection_Fullscreen.shader" />
      <None Include="Assets\Battlehub\RTExtensions\Content\Runtime\RTTerrain\Prefabs\Materials\TerrainHandleShader.shader" />

@@ -28,7 +28,7 @@ public class RTEManager : MonoBehaviour
     public void HideHandles(){
         Debug.LogError("RTEManager.HideHandles");
         IsHandlesEnabled=true;
-        ToolBar.DisableHandles();
+        if(ToolBar)ToolBar.DisableHandles();
         EditButton.SetActive(false);
     }
 
@@ -36,7 +36,7 @@ public class RTEManager : MonoBehaviour
     public void ShowHandles(){
         Debug.LogError("RTEManager.ShowHandles");
         IsHandlesEnabled=true;
-        ToolBar.EnableHandles();
+        if(ToolBar)ToolBar.EnableHandles();
         EditButton.SetActive(true);
     }
 
@@ -91,6 +91,19 @@ public class RTEManager : MonoBehaviour
                 //很无语，本来打算放弃了的，把原项目UI从 ScreenSpace-Camera改成ScreenSpace-Overlay，再处理一下原来的漂浮UI的问题，结果这样居然可以...
             }
         }
+
+        if(ToolBar!=null){
+            if (IsClickUGUIorNGUI.Instance && IsClickUGUIorNGUI.Instance.isOverUI) 
+            {
+                // Debug.Log("RuntimeSceneInput.LateUpdate IsClickUGUIorNGUI.Instance.isOverUI");
+                // return;
+                ToolBar.sceneInput.IsOverUI=true;
+            }
+            else{
+                ToolBar.sceneInput.IsOverUI=false;
+            }
+        }
+        
     }
 
     private void InstantiateToolBar(){
@@ -105,6 +118,7 @@ public class RTEManager : MonoBehaviour
         }
     }
 
+    [UnityEngine.ContextMenu("HideToolbar")]
     public void HideToolbar(){
         Debug.Log("HideToolbar");
 
@@ -119,6 +133,7 @@ public class RTEManager : MonoBehaviour
         //DisableRaycast();
     }
 
+    [UnityEngine.ContextMenu("ShowToolbar")]
     public void ShowToolbar(){
         Debug.Log("ShowToolbar");
 
@@ -133,6 +148,11 @@ public class RTEManager : MonoBehaviour
         //EnableRaycast();
     }
 
+    public void SelectObjects(List<GameObject> objs){
+        //sceneCompnent.Selection.
+    }
+
+    [UnityEngine.ContextMenu("ToggleToolbar")]
     public void ToggleToolbar()
     {
         Debug.Log("ToggleToolbar");
@@ -147,6 +167,7 @@ public class RTEManager : MonoBehaviour
 
     public bool IsHandlesEnabled=false;
 
+    [UnityEngine.ContextMenu("ToggleHandles")]
     public void ToggleHandles()
     {
         if(IsHandlesEnabled){
@@ -445,5 +466,44 @@ public class RTEManager : MonoBehaviour
         }
         if(raycaster!=null)
             raycaster.enabled=v;
+    }
+
+    public List<GameObject> TestSelectObjs;
+
+    [UnityEngine.ContextMenu("TestSelect")]
+    public void TestSelect()
+    {
+        SelectObjs(TestSelectObjs);
+    }
+
+    public void SelectObjs(List<GameObject> objs){
+        if (IsToolBarVisible == false)
+        {
+            //ShowToolbar();
+
+            Debug.Log("ShowToolbar");
+
+            InstantiateToolBar();
+
+            IsToolBarVisible = true;
+            ToolBar.gameObject.SetActive(true);
+            ToolBar.EnableHighlight();//不一样
+            EditorExtensions.SetActive(true);
+            
+            LookAroundToLookFree();
+            LookFreeToLookAround();//不一样
+        }
+        if (sceneCompnent == null)
+        {
+            sceneCompnent = GameObject.FindObjectOfType<RuntimeSceneComponent>();
+            sceneCompnent.SelectionChanged += OnSelectionChanged;
+        }
+        sceneCompnent.TryToClearSelection();
+        foreach (var item in objs)
+        {
+            sceneCompnent.SelectGO(true, true, item);
+        }
+        // sceneCompnent.SelectList(objs);//不行啊
+        sceneCompnent.Focus(FocusMode.Default);
     }
 }

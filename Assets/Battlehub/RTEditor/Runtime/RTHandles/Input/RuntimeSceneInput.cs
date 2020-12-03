@@ -158,6 +158,8 @@ namespace Battlehub.RTHandles
 
         public bool EnableSelection=true;//cww
 
+        public bool IsOverUI=false;
+
         public bool EnableUpdate=true;//cww
 
         protected override void LateUpdate()
@@ -290,6 +292,14 @@ namespace Battlehub.RTHandles
                     SceneComponent.Zoom(ZoomAxis() * MoveZSensitivity, Quaternion.identity);
 
                     if(EnableSelection==false)return;
+                    if(IsOverUI==true)return;
+                    
+                    // if (IsClickUGUIorNGUI.Instance && IsClickUGUIorNGUI.Instance.isOverUI) 
+                    // {
+                    //     Debug.Log("RuntimeSceneInput.LateUpdate IsClickUGUIorNGUI.Instance.isOverUI");
+                    //     return;
+                    // }
+
                     BeginSelectAction();
                     if (SelectAction())
                     {

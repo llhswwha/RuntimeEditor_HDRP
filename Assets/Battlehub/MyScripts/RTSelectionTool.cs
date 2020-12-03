@@ -18,6 +18,11 @@ public class RTSelectionTool : MonoBehaviour
     void Update()
     {
         if(Input.GetMouseButtonUp(0)){
+            if (IsClickUGUIorNGUI.Instance && IsClickUGUIorNGUI.Instance.isOverUI) 
+            {
+                Debug.Log("RTSelectionTool.Update IsClickUGUIorNGUI.Instance.isOverUI");
+                return;
+            }
             if(camera==null)
             {
                 camera=Camera.main;
@@ -25,6 +30,7 @@ public class RTSelectionTool : MonoBehaviour
             Ray ray=Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if(Physics.Raycast(ray,out hitInfo)){
+
                 hitObj=hitInfo.collider.gameObject;
                 Debug.Log("Hit:"+hitObj);
                 ExposeToEditor expose=hitObj.GetComponent<ExposeToEditor>();
