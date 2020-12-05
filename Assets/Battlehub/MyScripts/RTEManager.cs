@@ -148,8 +148,9 @@ public class RTEManager : MonoBehaviour
         //EnableRaycast();
     }
 
-    public void SelectObjects(List<GameObject> objs){
-        //sceneCompnent.Selection.
+    public void SelectObjects(params GameObject[] objs)
+    {
+        this.SelectObjs(objs);
     }
 
     [UnityEngine.ContextMenu("ToggleToolbar")]
@@ -468,7 +469,7 @@ public class RTEManager : MonoBehaviour
             raycaster.enabled=v;
     }
 
-    public List<GameObject> TestSelectObjs;
+    public GameObject[] TestSelectObjs;
 
     [UnityEngine.ContextMenu("TestSelect")]
     public void TestSelect()
@@ -476,7 +477,12 @@ public class RTEManager : MonoBehaviour
         SelectObjs(TestSelectObjs);
     }
 
-    public void SelectObjs(List<GameObject> objs){
+    public void SelectObjs(params GameObject[] objs){
+        if(objs==null){
+            Debug.LogError("RTEManager.SelectObjs objs==null");
+            return;
+        }
+        Debug.LogError("RTEManager.SelectObjs:"+objs.Length);
         if (IsToolBarVisible == false)
         {
             //ShowToolbar();
@@ -504,6 +510,6 @@ public class RTEManager : MonoBehaviour
             sceneCompnent.SelectGO(true, true, item);
         }
         // sceneCompnent.SelectList(objs);//不行啊
-        sceneCompnent.Focus(FocusMode.Default);
+        //sceneCompnent.Focus(FocusMode.Default);
     }
 }

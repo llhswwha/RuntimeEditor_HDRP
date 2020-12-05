@@ -67,8 +67,8 @@ namespace Battlehub.RTSL
 
             EditorGUILayout.Separator();
 
-            //m_path = EditorGUILayout.TextField("Data Path:", m_path);
-            EditorGUILayout.LabelField("Data Path: " + m_path);
+            m_path = EditorGUILayout.TextField("Data Path:", m_path);
+            //EditorGUILayout.LabelField("Data Path: " + m_path);
             if (m_path.EndsWith("/") || m_path.EndsWith("\\") || m_path.StartsWith("/") || m_path.StartsWith("\\"))
             {
                 m_path = m_path.Trim(new[] { '/', '\\' });
